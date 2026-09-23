@@ -24,13 +24,19 @@ let cloud2Size;
 
 function setup() {
 
-createCanvas(500, 750);
+createCanvas(500, 760);
 background(28, 52, 84);   
 setCloudPosition();
 
 }
 
-
+function setCloudPosition() {
+    cloudX = random(width);
+    cloudY = random(height);
+    cloud1X = random(width);
+    cloud1Y = random(height);
+    cloud2X = random(width);
+    cloud2Y = random(height);
 }
 /**
 */

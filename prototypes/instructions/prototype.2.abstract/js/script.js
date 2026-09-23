@@ -11,7 +11,6 @@
 */
 function setup() {
 
-colorMode(HSB, 360, 100, 100);
 createCanvas(500, 700);
 background(253, 94, 83);
 

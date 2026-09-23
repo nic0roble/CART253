@@ -1,24 +1,34 @@
 /**
- * Title of Project
- * Author Name
+ * weird
+ * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is my 3rd drawing
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
 
+createCanvas(500, 750);
+background(28, 52, 84);   
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
 
+//moon
+ push();
+ fill(240, 240, 210);
+ stroke(240, 240, 210);
+  circle(380, 120, 200);
+
+  //moons cut
+fill(28, 52, 84);
+stroke(28, 52, 84);
+circle(410, 100, 200);
+    pop();
 }

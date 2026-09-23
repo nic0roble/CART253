@@ -29,6 +29,8 @@ function draw() {
 //call the function - run the code
 Head();
 Ears();
+mouth();
+Eyes();
 
 }
 // Base shape of the fox's head
@@ -36,10 +38,10 @@ Ears();
 function Head() {
 
 
-    push();
-    fill(237, 145, 33); // 
-    stroke(237, 145, 33);
-    ellipse(250, 280, 220, 200);
+push();
+fill(237, 145, 33); // 
+stroke(237, 145, 33);
+ ellipse(250, 280, 220, 200);
 }
 
 // Fox ears
@@ -48,23 +50,52 @@ function Ears() {
 
 push();
     // left ear ext
-    fill(237, 145, 33);
-    stroke(237, 145, 33);
-    triangle(160, 220, 195, 110, 235, 220);
+ fill(237, 145, 33);
+stroke(237, 145, 33);
+triangle(160, 220, 195, 110, 235, 220);
 
     // left ear int
-    fill(255, 255, 255);
-    stroke(255, 255, 255);
-    triangle(178, 205, 200, 140, 222, 205);
+ fill(255, 255, 255);
+ stroke(255, 255, 255);
+ triangle(178, 205, 200, 140, 222, 205);
 
     // right ear ext
-    fill(237, 145, 33);
-    stroke(237, 145, 33);
-    triangle(265, 220, 305, 110, 340, 220);
+ fill(237, 145, 33);
+ stroke(237, 145, 33);
+ triangle(265, 220, 305, 110, 340, 220);
 
     // right ear int
-    fill(255, 255, 255);
-    stroke(3255, 255, 255);
-    triangle(278, 205, 300, 140, 322, 205);
-    pop();
+fill(255, 255, 255);
+ stroke(3255, 255, 255);
+ triangle(278, 205, 300, 140, 322, 205);
+ pop();
+} 
+
+// Fox white mouth area 
+
+function mouth() {
+
+push();
+fill(255, 255, 255);
+stroke(255, 255, 255);
+ellipse(250, 320, 110, 90);
+pop();
+
+}
+
+// fox eyes
+
+function Eyes() {
+push();
+
+    // left eye
+fill(111, 78, 55);
+stroke(111, 78, 55);
+ellipse(210, 270, 25, 30);
+
+    // right eye
+ fill(111, 78, 55);
+stroke(111, 78, 55);
+ellipse(290, 270, 25, 30);
+pop();
 }

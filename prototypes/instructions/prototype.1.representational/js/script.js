@@ -1,5 +1,5 @@
 /**
- * 3 drawings
+ * representational
  * Nicolas Robledo S.
  * 
  * This is my 1st drawing 

@@ -2,7 +2,7 @@
 
 Nicolas Robledo Sanchez
 
-[View this project online](http://127.0.0.1:5500/prototypes/instructions/prototype.3.weird/)
+[View this project online](https://nic0roble.github.io/CART253/prototypes/instructions/prototype.3.weird/)
 
 ## Description
 

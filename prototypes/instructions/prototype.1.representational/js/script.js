@@ -31,6 +31,7 @@ Head();
 Ears();
 mouth();
 Eyes();
+Nose();
 
 }
 // Base shape of the fox's head
@@ -80,7 +81,7 @@ fill(255, 255, 255);
 stroke(255, 255, 255);
 ellipse(250, 320, 110, 90);
 pop();
-
+''
 }
 
 // fox eyes
@@ -94,8 +95,29 @@ stroke(111, 78, 55);
 ellipse(210, 270, 25, 30);
 
     // right eye
- fill(111, 78, 55);
+fill(111, 78, 55);
 stroke(111, 78, 55);
 ellipse(290, 270, 25, 30);
 pop();
+}
+
+//fox nose
+
+function Nose(){
+
+push();
+fill(0, 0, 0);
+stroke(0, 0, 0);
+triangle(240, 330, 260, 330, 250, 345);
+
+  
+
+    strokeWeight(1);
+    noFill();
+// left side
+    arc(235, 343, 30, 40, 0, HALF_PI);
+//right side
+    arc(265, 343, 30, 40, HALF_PI, PI);
+
+pop();   
 }

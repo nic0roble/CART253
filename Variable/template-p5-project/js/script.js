@@ -1,72 +1,93 @@
+
+
+
 /**
- * Variables challenge
- * Nicolas Robledo Sanchez
- * 
- *First approche to variable
- It changes with parameters
+ * Mr. Furious
+ * Pippin Barr
+ *
+ * A guy who becomes visibly furious!
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+//mr F shaking
+ let a = 20;
+  let b = 80;
+let variation = 0;
 
-//let ellipseSize = 150;
-//let rectSize = 10;
 
-//let sunX = 20;
-//let sunY = 50;
-//let sunSize = 10;
-//let r = 255;
-//let g = 0;
-//let b = 255;
-
-let sun = {
- sunX:20,
- sunY:50,
- sunSize:10,
- r:255,
- g:0
- b:255,
-}
-
+// bird
 let bird = {
- birdX:20,
+ birdX:30,
  birdY:50,
  birdSize:10,
- r:255,
- g:0
- b:0
-}
 
-function setup() {
-
-    createCanvas(500,500);
+  fill: {
+    r: 255,
+    g: 255,
+    b: 255,
+  }
 
 }
 
+// Our friend Mr. Furious
+
+let mrFurious = {
+  // Position and size
+  x: 200,
+  y: 200,
+  size: 100,
+  // Colour
+  fill: {
+    r: 255,
+    g: 225,
+    b: 225,
+  }
+
+  
+  
+};
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
-function draw() {
-background(0,0,0);
-fill(sun.r,sun.g,sun.b);
-ellipse(sun, sunX,sun,sunY,sun.sunSize,sun.sunSize);
-
-fill(bird.r,bird.g,bird.b);
-ellipse(bird.birdX,birdY,bird.birdSize);
-
-bird.birdX = bird.birdX+1;
-
-//ellipse(250, 250,ellipseSize,ellipseSize);
-
-//fill(255,0,0);
-//rect(rectSize,height/2,20);
-
-
-//ellipseSize = ellipseSize-1;
-//rectSize = rectSize+1;
+ * Create the canvas
+ */
+function setup() {
+  createCanvas(400, 400);
 
 }
+
+/**
+ * Draw (and update) Mr. Furious
+ */
+function draw() {
+  background(160, 180, 200);
+
+
+  
+  /* Draw Mr. Furious as a coloured circle
+  */
+  push();
+  noStroke();
+  fill(mrFurious.fill.r, mrFurious.fill.g, mrFurious.fill.b);
+  ellipse(mrFurious.x, mrFurious.y, mrFurious.size);
+  pop();
+push();
+fill(bird.fill.r,bird.fill.g,bird.fill.b);
+
+ellipse(bird.birdX,bird.birdY,bird.birdSize);
+bird.birdX = constrain(bird.birdX,0,width-30);
+bird.birdX = bird.birdX+1;
+
+pop();
+
+ mrFurious.fill.b = mrFurious.fill.b-1
+ mrFurious.fill.g = mrFurious.fill.g-1;
+
+mrFurious.x = random(200,200 + variation); 
+mrFurious.y = random(200,200); 
+
+variation = variation+.02
+
+}
+
+

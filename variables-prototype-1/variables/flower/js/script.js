@@ -111,41 +111,37 @@ background(200, 230, 255);
   Growing7 = constrain(time - 420, 0, 180);
 
 
-  flower.y = 250 + Drooping;
-  flower.size = 120 - Drooping;
-  flower.fill.r = 255 - Drooping;
-  flower.fill.b = 150 - Drooping;
+  flower.y = 600 - Growing;
+  flower.size = 30 + constrain(Growing, 0, 70);
 
-  flower2.y = 250 + Drooping2;
-  flower2.size = 120 - Drooping2;
-  flower2.fill.r = 255 - Drooping2;
-  flower2.fill.b = 150 - Drooping2;
+  flower2.y = 600 - Growing2;
+  flower2.size = 30 + constrain(Growing2, 0, 70);
 
-  flower3.y = 250 + Drooping3;
-  flower3.size = 120 - Drooping3;
-  flower3.fill.r = 255 - Drooping3;
-  flower3.fill.b = 150 - Drooping3;
+  flower3.y = 600 - Growing3;
+  flower3.size = 30 + constrain(Growing3, 0, 70);
 
-  flower4.y = 450 + Drooping4;
-  flower4.size = 100 - Drooping4;
-  flower4.fill.r = 255 - Drooping4;
-  flower4.fill.b = 150 - Drooping4;
+  flower4.y = 600 - Growing4;
+  flower4.size = 30 + constrain(Growing4, 0, 70);
 
-  flower5.y = 450 + Drooping5;
-  flower5.size = 100 - Drooping5;
-  flower5.fill.r = 255 - Drooping5;
-  flower5.fill.b = 150 - Drooping5;
+  flower5.y = 600 - Growing5;
+  flower5.size = 30 + constrain(Growing5, 0, 70);
 
-  flower6.y = 450 + Drooping6;
-  flower6.size = 100 - Drooping6;
-  flower6.fill.r = 255 - Drooping6;
-  flower6.fill.b = 150 - Drooping6;
+  flower6.y = 600 - Growing6;
+  flower6.size = 30 + constrain(Growing6, 0, 70);
 
-  flower7.y = 450 + Drooping7;
-  flower7.size = 100 - Drooping7;
-  flower7.fill.r = 255 - Drooping7;
-  flower7.fill.b = 150 - Drooping7;
+  flower7.y = 600 - Growing7;
+  flower7.size = 30 + constrain(Growing7, 0, 70);
 
+ push();
+  noStroke();
+  fill(60, 160, 70);
+  rect(0, 650, 500, 50);
+  fill(90, 190, 90);
+  rect(0, 670, 500, 30);
+  fill(40, 130, 60);
+  rect(0, 685, 500, 15);
+  pop();
+  
 
   push();
   stroke(40, 140, 60);
@@ -208,15 +204,5 @@ background(200, 230, 255);
   ellipse(flower7.x, flower7.y, flower7.size);
   pop();
 
- push();
-  noStroke();
-  fill(60, 160, 70);
-  rect(0, 650, 500, 50);
-  fill(90, 190, 90);
-  rect(0, 670, 500, 30);
-  fill(40, 130, 60);
-  rect(0, 685, 500, 15);
-  pop();
-  
-  
+ 
 }

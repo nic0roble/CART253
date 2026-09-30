@@ -157,6 +157,11 @@ background(200, 230, 255);
   strokeWeight(10);
   line(flower.x, 500, flower.x, flower.y);
   line(flower2.x, 500, flower2.x, flower2.y);
+  line(flower3.x, 500, flower3.x, flower3.y);
+  line(flower4.x, 650, flower4.x, flower4.y);
+  line(flower5.x, 650, flower5.x, flower5.y);
+  line(flower6.x, 650, flower6.x, flower6.y);
+  line(flower7.x, 650, flower7.x, flower7.y);
   pop();
 
   // Flower head
@@ -166,10 +171,46 @@ background(200, 230, 255);
   ellipse(flower.x, flower.y, flower.size);
   pop();
 
-  // Flower head
+  // Flower2 head
   push();
   noStroke();
   fill(flower2.fill.r, flower2.fill.g, flower2.fill.b);
   ellipse(flower2.x, flower2.y, flower2.size);
   pop();
+
+   // Flower3 head
+  push();
+  noStroke();
+  fill(flower3.fill.r, flower3.fill.g, flower3.fill.b);
+  ellipse(flower3.x, flower3.y, flower3.size);
+  pop();
+
+  // Flower4 head
+  push();
+  noStroke();
+  fill(flower4.fill.r, flower4.fill.g, flower4.fill.b);
+  ellipse(flower4.x, flower4.y, flower4.size);
+  pop();
+
+  // Flower5 head
+  push();
+  noStroke();
+  fill(flower5.fill.r, flower5.fill.g, flower5.fill.b);
+  ellipse(flower5.x, flower5.y, flower5.size);
+  pop();
+
+  // Flower6 head
+  push();
+  noStroke();
+  fill(flower6.fill.r, flower6.fill.g, flower6.fill.b);
+  ellipse(flower6.x, flower6.y, flower6.size);
+  pop();
+
+  // Flower7 head
+  push();
+  noStroke();
+  fill(flower7.fill.r, flower7.fill.g, flower7.fill.b);
+  ellipse(flower7.x, flower7.y, flower7.size);
+  pop();
+
 }

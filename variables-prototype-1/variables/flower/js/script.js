@@ -33,12 +33,67 @@ let flower2 = {
   },
 };
 
+let flower3 = {
+ x: 400, 
+ y: 250,
+size: 120, 
+fill: { 
+r: 255, 
+g: 100, 
+b: 150  
+}
+}
+
+let flower4 = {
+x: 65, 
+y: 450, 
+size: 100, 
+fill: { 
+r: 255, 
+g: 100, 
+b: 150 } 
+};
+
+let flower5 = { 
+x: 190, 
+y: 450, 
+size: 100, 
+fill: { 
+r: 255, 
+g: 100, 
+b: 150 } 
+};
+
+let flower6 = {
+x: 310, 
+y: 450, 
+size: 100, 
+fill: { 
+r: 255, 
+g: 100, 
+b: 150 } 
+};
+
+let flower7 = {
+x: 435, 
+y: 450, 
+size: 100, 
+fill: { 
+r: 255, 
+g: 100, 
+b: 150 } 
+};
 
 
 let time = 0;
 let Drooping = 0;
 
 let Drooping2 = 0;
+let Drooping3 = 0;
+let Drooping4 = 0;
+let Drooping5 = 0;
+let Drooping6 = 0;
+let Drooping7 = 0;
 
 function setup() {
 createCanvas(500, 700);

@@ -26,7 +26,7 @@ let sadCircle = {
 
 let time = 0;
 let Circletime = 0;
-
+let Eyebrows = 0;
 
 function setup() {
  createCanvas(600, 600);
@@ -70,7 +70,7 @@ sadCircle.fill.r = constrain(sadCircle.fill.r, 70, 255);
 sadCircle.fill.g = constrain(sadCircle.fill.g, 110, 255);
 sadCircle.fill.b = constrain(sadCircle.fill.b, 190, 255);
 
- // Eyes (white part and pupils)
+ // Eyes; white part, pupils and twinkle
   push();
   noStroke();
   fill(255);
@@ -83,5 +83,17 @@ sadCircle.fill.b = constrain(sadCircle.fill.b, 190, 255);
   ellipse(sadCircle.x - 70, sadCircle.y - 45, 10);
   ellipse(sadCircle.x + 50, sadCircle.y - 45, 10);
 pop();
+
+// Eyebrows 
+push();
+ Eyebrows = constrain(Circletime - 125, 0, 15);
+stroke(0);
+strokeWeight(15);
+// Left eyebrow
+line(sadCircle.x - 90, sadCircle.y - 70 + Eyebrows, sadCircle.x - 30, sadCircle.y - 85 + Eyebrows);
+// Right eyebrow
+line(sadCircle.x + 30, sadCircle.y - 85 + Eyebrows, sadCircle.x + 90, sadCircle.y - 70 + Eyebrows);
+pop();
+
 
 }

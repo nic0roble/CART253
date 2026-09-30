@@ -48,5 +48,10 @@ background(245, 245, 220);
 
 sadCircle.fill.r = sadCircle.fill.r-1;
 sadCircle.fill.g = sadCircle.fill.g-1;
+sadCircle.fill.b = sadCircle.fill.b - 1;
+
+sadCircle.fill.r = constrain(sadCircle.fill.r, 70, 255);
+sadCircle.fill.g = constrain(sadCircle.fill.g, 110, 255);
+sadCircle.fill.b = constrain(sadCircle.fill.b, 190, 255);
 
 }

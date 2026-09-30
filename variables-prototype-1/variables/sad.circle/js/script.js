@@ -95,5 +95,11 @@ line(sadCircle.x - 90, sadCircle.y - 70 + Eyebrows, sadCircle.x - 30, sadCircle.
 line(sadCircle.x + 30, sadCircle.y - 85 + Eyebrows, sadCircle.x + 90, sadCircle.y - 70 + Eyebrows);
 pop();
 
+// Mouth
+push();
+stroke(0);
+strokeWeight(4);
+line(sadCircle.x - 40, sadCircle.y + 60, sadCircle.x + 40, sadCircle.y + 60);
+pop();
 
 }

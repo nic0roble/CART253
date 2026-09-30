@@ -47,7 +47,9 @@ background(245, 245, 220);
   iris.x = constrain(mouseX, eye.x - 80, eye.x + 80);
   iris.y = constrain(mouseY, eye.y - 80, eye.y + 80);
 
-
+  // Pupil and Iris moves the same
+  pupil.x = iris.x;
+  pupil.y = iris.y;
 
   // White part of the eye
   push();
@@ -63,6 +65,11 @@ background(245, 245, 220);
   ellipse(iris.x, iris.y, iris.size);
   pop();
 
-
+  //Black part of the eye
+  push();
+  noStroke();
+  fill(0);
+  ellipse(pupil.x, pupil.y, pupil.size);
+  pop();
 }
 

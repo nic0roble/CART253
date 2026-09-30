@@ -12,78 +12,74 @@
 */
 
 let flower = {
-  x: 300,
-  y: 250,
-  size: 120,
-  fill: {
-    r: 255,
-    g: 100,
-    b: 150,
-  },
+x: 70,
+y: 300,
+size: 110,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
 
 let flower2 = {
-  x: 200,
-  y: 150,
-  size: 120,
-  fill: {
-    r: 255,
-    g: 100,
-    b: 150,
-  },
+x: 180,
+y: 180,
+size: 90,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
 
 let flower3 = {
- x: 400, 
- y: 250,
-size: 120, 
-fill: { 
-r: 255, 
-g: 100, 
-b: 150  
-}
-}
-
-let flower4 = {
-x: 65, 
-y: 450, 
-size: 100, 
-fill: { 
-r: 255, 
-g: 100, 
-b: 150 } 
+x: 290,
+y: 340,
+size: 130,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
 
-let flower5 = { 
-x: 190, 
-y: 450, 
-size: 100, 
-fill: { 
-r: 255, 
-g: 100, 
-b: 150 } 
+let flower4 = {
+x: 400,
+y: 210,
+size: 100,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
+};
+
+let flower5 = {
+x: 120,
+y: 470,
+size: 80,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
 
 let flower6 = {
-x: 310, 
-y: 450, 
-size: 100, 
-fill: { 
-r: 255, 
-g: 100, 
-b: 150 } 
+x: 340,
+y: 500,
+size: 95,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
 
 let flower7 = {
-x: 435, 
-y: 450, 
-size: 100, 
-fill: { 
-r: 255, 
-g: 100, 
-b: 150 } 
+x: 450,
+y: 420,
+size: 85,
+fill: {
+r: 255,
+g: 100,
+b: 150 }
 };
-
 
 let time = 0;
 let Drooping = 0;
@@ -155,9 +151,9 @@ background(200, 230, 255);
   push();
   stroke(40, 140, 60);
   strokeWeight(10);
-  line(flower.x, 500, flower.x, flower.y);
-  line(flower2.x, 500, flower2.x, flower2.y);
-  line(flower3.x, 500, flower3.x, flower3.y);
+  line(flower.x, 650, flower.x, flower.y);
+  line(flower2.x, 650, flower2.x, flower2.y);
+  line(flower3.x, 650, flower3.x, flower3.y);
   line(flower4.x, 650, flower4.x, flower4.y);
   line(flower5.x, 650, flower5.x, flower5.y);
   line(flower6.x, 650, flower6.x, flower6.y);
@@ -213,4 +209,15 @@ background(200, 230, 255);
   ellipse(flower7.x, flower7.y, flower7.size);
   pop();
 
+ push();
+  noStroke();
+  fill(60, 160, 70);
+  rect(0, 650, 500, 50);
+  fill(90, 190, 90);
+  rect(0, 670, 500, 30);
+  fill(40, 130, 60);
+  rect(0, 685, 500, 15);
+  pop();
+  
+  
 }

@@ -35,7 +35,6 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
 
@@ -49,18 +48,23 @@ background(245, 245, 220);
   ellipse(sadCircle.x,sadCircle.y, sadCircle.size);
   pop();
 
+//Time stops for a few seconds 
 time = time + 1;
 Circletime = time - 170;
 Circletime = constrain(Circletime, 0, 200);
 
+//Color and Size changing by time
 sadCircle.fill.r = 255 - Circletime;
 sadCircle.fill.g = 225 - Circletime;
 sadCircle.fill.b = 225 - Circletime;
 sadCircle.size = 450 - Circletime;
 
+//Color start to decrease 
 sadCircle.fill.r = sadCircle.fill.r-1;
 sadCircle.fill.g = sadCircle.fill.g-1;
 sadCircle.fill.b = sadCircle.fill.b - 1;
+
+//Stop the color at the rgb that i want
 
 sadCircle.fill.r = constrain(sadCircle.fill.r, 70, 255);
 sadCircle.fill.g = constrain(sadCircle.fill.g, 110, 255);

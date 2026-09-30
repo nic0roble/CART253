@@ -132,6 +132,7 @@ background(200, 230, 255);
   flower7.y = 600 - Growing7;
   flower7.size = 30 + constrain(Growing7, 0, 70);
 
+//grass
  push();
   noStroke();
   fill(60, 160, 70);

@@ -43,6 +43,10 @@ function draw() {
 background(245, 245, 220);
 
 
+ // Iris moves with the mouse
+  iris.x = constrain(mouseX, eye.x - 80, eye.x + 80);
+  iris.y = constrain(mouseY, eye.y - 80, eye.y + 80);
+
 
 
   // White part of the eye
@@ -52,7 +56,13 @@ background(245, 245, 220);
   ellipse(eye.x, eye.y, eye.size);
   pop();
 
- 
+  // Iris
+  push();
+  noStroke();
+  fill(iris.fill.r, iris.fill.g, iris.fill.b);
+  ellipse(iris.x, iris.y, iris.size);
+  pop();
+
 
 }
 

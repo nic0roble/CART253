@@ -24,6 +24,9 @@ let sadCircle = {
   },
 };
 
+let time = 0;
+let Circletime = 0;
+
 
 function setup() {
  createCanvas(600, 600);
@@ -46,6 +49,15 @@ background(245, 245, 220);
   ellipse(sadCircle.x,sadCircle.y, sadCircle.size);
   pop();
 
+time = time + 1;
+Circletime = time - 170;
+Circletime = constrain(Circletime, 0, 200);
+
+sadCircle.fill.r = 255 - Circletime;
+sadCircle.fill.g = 225 - Circletime;
+sadCircle.fill.b = 225 - Circletime;
+sadCircle.size = 450 - Circletime;
+
 sadCircle.fill.r = sadCircle.fill.r-1;
 sadCircle.fill.g = sadCircle.fill.g-1;
 sadCircle.fill.b = sadCircle.fill.b - 1;
@@ -53,5 +65,7 @@ sadCircle.fill.b = sadCircle.fill.b - 1;
 sadCircle.fill.r = constrain(sadCircle.fill.r, 70, 255);
 sadCircle.fill.g = constrain(sadCircle.fill.g, 110, 255);
 sadCircle.fill.b = constrain(sadCircle.fill.b, 190, 255);
+
+
 
 }

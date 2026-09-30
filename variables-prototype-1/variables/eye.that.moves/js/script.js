@@ -24,7 +24,7 @@ let pupil = {
 let iris = {
   x: 300,
   y: 300,
-  size: 120,
+  size: 97,
   fill: {
     r: 111,
     g: 78,
@@ -44,8 +44,8 @@ background(245, 245, 220);
 
 
  // Iris moves with the mouse
-  iris.x = constrain(mouseX, eye.x - 80, eye.x + 80);
-  iris.y = constrain(mouseY, eye.y - 80, eye.y + 80);
+  iris.x = constrain(mouseX, eye.x - 75, eye.x + 75);
+  iris.y = constrain(mouseY, eye.y - 75, eye.y + 75);
 
   // Pupil and Iris moves the same
   pupil.x = iris.x;

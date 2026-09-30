@@ -12,9 +12,9 @@
 */
 
 let flower = {
-x: 70,
-y: 300,
-size: 110,
+x: 50,
+y: 600,
+size: 30,
 fill: {
 r: 255,
 g: 100,
@@ -22,74 +22,73 @@ b: 150 }
 };
 
 let flower2 = {
-x: 180,
-y: 180,
-size: 90,
+x: 140,
+y: 600,
+size: 30,
 fill: {
 r: 255,
-g: 100,
-b: 150 }
+g: 220,
+b: 60 }
 };
 
 let flower3 = {
-x: 290,
-y: 340,
-size: 130,
+x: 230,
+y: 600,
+size: 30,
 fill: {
-r: 255,
+r: 180,
 g: 100,
-b: 150 }
+b: 220 }
 };
 
 let flower4 = {
-x: 400,
-y: 210,
-size: 100,
+x: 320,
+y: 600,
+size: 30,
 fill: {
 r: 255,
-g: 100,
-b: 150 }
+g: 150,
+b: 50 }
 };
 
 let flower5 = {
-x: 120,
-y: 470,
-size: 80,
+x: 410,
+y: 600,
+size: 30,
 fill: {
-r: 255,
-g: 100,
-b: 150 }
+r: 230,
+g: 50,
+b: 60 }
 };
 
 let flower6 = {
-x: 340,
-y: 500,
-size: 95,
+x: 95,
+y: 600,
+size: 30,
 fill: {
-r: 255,
-g: 100,
-b: 150 }
+r: 250,
+g: 250,
+b: 250 }
 };
 
 let flower7 = {
-x: 450,
-y: 420,
-size: 85,
+x: 370,
+y: 600,
+size: 30,
 fill: {
-r: 255,
-g: 100,
-b: 150 }
+r: 100,
+g: 120,
+b: 255 }
 };
 
 let time = 0;
-let Drooping = 0;
-
-let Drooping2 = 0;
-let Drooping3 = 0;
-let Drooping4 = 0;
-let Drooping5 = 0;
-let Drooping6 = 0;
-let Drooping7 = 0;
+let Growing = 0;
+let Growing2 = 0;
+let Growing3 = 0;
+let Growing4 = 0;
+let Growing5 = 0;
+let Growing6 = 0;
+let Growing7 = 0;
 
 function setup() {
 createCanvas(500, 700);
@@ -103,13 +102,13 @@ function draw() {
 background(200, 230, 255);
 
  time = time + 1;
-  Drooping = constrain(time - 170, 0, 80);
-  Drooping2 = constrain(time - 250, 0, 80);
-  Drooping3 = constrain(time - 330, 0, 80);
-  Drooping4 = constrain(time - 410, 0, 60);
-  Drooping5 = constrain(time - 490, 0, 60);
-  Drooping6 = constrain(time - 570, 0, 60);
-  Drooping7 = constrain(time - 650, 0, 60);
+  Growing = constrain(time - 60, 0, 200);
+  Growing2 = constrain(time - 120, 0, 350);
+  Growing3 = constrain(time - 180, 0, 150);
+  Growing4 = constrain(time - 240, 0, 300);
+  Growing5 = constrain(time - 300, 0, 250);
+  Growing6 = constrain(time - 360, 0, 400);
+  Growing7 = constrain(time - 420, 0, 180);
 
 
   flower.y = 250 + Drooping;

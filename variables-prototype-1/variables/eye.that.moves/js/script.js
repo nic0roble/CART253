@@ -17,9 +17,20 @@ let eye = {
 let pupil = {
   x: 300,
   y: 300,
-  size: 100,
+  size: 70,
+
 };
 
+let iris = {
+  x: 300,
+  y: 300,
+  size: 120,
+  fill: {
+    r: 111,
+    g: 78,
+    b: 55,
+  },
+};
 
 function setup() {
  createCanvas(500, 700);
@@ -29,5 +40,19 @@ function setup() {
 /**
 */
 function draw() {
-background(244, 244, 244);
+background(245, 245, 220);
+
+
+
+
+  // White part of the eye
+  push();
+  noStroke();
+  fill(255);
+  ellipse(eye.x, eye.y, eye.size);
+  pop();
+
+ 
+
 }
+

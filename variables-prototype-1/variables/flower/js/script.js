@@ -155,11 +155,14 @@ background(200, 230, 255);
   line(flower7.x, 650, flower7.x, flower7.y);
   pop();
 
-  // Flower head
+
+ // Flower head
   push();
   noStroke();
   fill(flower.fill.r, flower.fill.g, flower.fill.b);
   ellipse(flower.x, flower.y, flower.size);
+  fill(255, 220, 0);
+  ellipse(flower.x, flower.y, 20);
   pop();
 
   // Flower2 head
@@ -167,13 +170,17 @@ background(200, 230, 255);
   noStroke();
   fill(flower2.fill.r, flower2.fill.g, flower2.fill.b);
   ellipse(flower2.x, flower2.y, flower2.size);
+  fill(255, 140, 0);
+  ellipse(flower2.x, flower2.y, 20);
   pop();
 
-   // Flower3 head
+  // Flower3 head
   push();
   noStroke();
   fill(flower3.fill.r, flower3.fill.g, flower3.fill.b);
   ellipse(flower3.x, flower3.y, flower3.size);
+  fill(255, 220, 0);
+  ellipse(flower3.x, flower3.y, 20);
   pop();
 
   // Flower4 head
@@ -181,6 +188,8 @@ background(200, 230, 255);
   noStroke();
   fill(flower4.fill.r, flower4.fill.g, flower4.fill.b);
   ellipse(flower4.x, flower4.y, flower4.size);
+  fill(255, 220, 0);
+  ellipse(flower4.x, flower4.y, 20);
   pop();
 
   // Flower5 head
@@ -188,6 +197,8 @@ background(200, 230, 255);
   noStroke();
   fill(flower5.fill.r, flower5.fill.g, flower5.fill.b);
   ellipse(flower5.x, flower5.y, flower5.size);
+  fill(255, 220, 0);
+  ellipse(flower5.x, flower5.y, 20);
   pop();
 
   // Flower6 head
@@ -195,6 +206,8 @@ background(200, 230, 255);
   noStroke();
   fill(flower6.fill.r, flower6.fill.g, flower6.fill.b);
   ellipse(flower6.x, flower6.y, flower6.size);
+  fill(255, 220, 0);
+  ellipse(flower6.x, flower6.y, 20);
   pop();
 
   // Flower7 head
@@ -202,7 +215,8 @@ background(200, 230, 255);
   noStroke();
   fill(flower7.fill.r, flower7.fill.g, flower7.fill.b);
   ellipse(flower7.x, flower7.y, flower7.size);
+  fill(255, 220, 0);
+  ellipse(flower7.x, flower7.y, 20);
   pop();
-
  
 }

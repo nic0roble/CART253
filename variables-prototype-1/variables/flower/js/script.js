@@ -109,6 +109,12 @@ background(200, 230, 255);
  time = time + 1;
   Drooping = constrain(time - 170, 0, 80);
   Drooping2 = constrain(time - 250, 0, 80);
+  Drooping3 = constrain(time - 330, 0, 80);
+  Drooping4 = constrain(time - 410, 0, 60);
+  Drooping5 = constrain(time - 490, 0, 60);
+  Drooping6 = constrain(time - 570, 0, 60);
+  Drooping7 = constrain(time - 650, 0, 60);
+
 
   flower.y = 250 + Drooping;
   flower.size = 120 - Drooping;
@@ -119,6 +125,32 @@ background(200, 230, 255);
   flower2.size = 120 - Drooping2;
   flower2.fill.r = 255 - Drooping2;
   flower2.fill.b = 150 - Drooping2;
+
+  flower3.y = 250 + Drooping3;
+  flower3.size = 120 - Drooping3;
+  flower3.fill.r = 255 - Drooping3;
+  flower3.fill.b = 150 - Drooping3;
+
+  flower4.y = 450 + Drooping4;
+  flower4.size = 100 - Drooping4;
+  flower4.fill.r = 255 - Drooping4;
+  flower4.fill.b = 150 - Drooping4;
+
+  flower5.y = 450 + Drooping5;
+  flower5.size = 100 - Drooping5;
+  flower5.fill.r = 255 - Drooping5;
+  flower5.fill.b = 150 - Drooping5;
+
+  flower6.y = 450 + Drooping6;
+  flower6.size = 100 - Drooping6;
+  flower6.fill.r = 255 - Drooping6;
+  flower6.fill.b = 150 - Drooping6;
+
+  flower7.y = 450 + Drooping7;
+  flower7.size = 100 - Drooping7;
+  flower7.fill.r = 255 - Drooping7;
+  flower7.fill.b = 150 - Drooping7;
+
 
   push();
   stroke(40, 140, 60);

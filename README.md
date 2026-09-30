@@ -15,12 +15,15 @@ Here I will keep the work I do for my CART253 class.
 * Project Variables
 Flowers Blooming
 ![photo](image.png)
+
 [View this project online](https://nic0roble.github.io/CART253/prototypes/instructions/prototype.3.weird/)
 
 Sad Face
 ![photo](image-1.png)
+
 [View this project online](https://nic0roble.github.io/CART253/variables-prototype-1/variables/sad.circle/)
 
 Watching Eye
 ![photo](image-2.png)
+
 [View this project online](https://nic0roble.github.io/CART253/variables-prototype-1/variables/eye.that.moves/)

@@ -16,4 +16,10 @@ This week I had to create three drawings for my prototypes assignment. The first
 
 The last drawing, the weird one, was the most difficult one because I honestly didn't know what to do at first. I started looking through the p5 ideas, and that's when I decided to type random. I found the random() function and I really liked it so I wanted to use it, but it was a bit complex to adapt because the example only showed one shape moving, while I wanted to use several at once. In the end, I managed to get the effect working, and I was happy with the result.
 
+## September 30, 2026
+
+Working with variables, using only the techniques we learned in class, has been one of the slowest but most interesting things we've done so far. It feels like it's more about logic than anything else, and the possibilities depend entirely on you.
+
+What surprised me, and also challenged me, was controlling time in my projects. In my sad circle, it was very hard to make it wait a few seconds before the face started turning blue. It took many tests and errors, but once I figured it out, I was able to apply the same idea in a different way in my flowers, where each one starts growing at its own moment. Of my three projects, the one I enjoyed making the most was definitely the flowers. It took the longest because of how many objects I had to manage, but I liked it the most because of the result. I though, my favorite was the eye that follows the cursor, and in the future I would like to explore that concept further.
+
 ![My website](images/screenshot.jpeg)

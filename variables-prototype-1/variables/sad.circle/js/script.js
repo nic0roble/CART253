@@ -70,6 +70,18 @@ sadCircle.fill.r = constrain(sadCircle.fill.r, 70, 255);
 sadCircle.fill.g = constrain(sadCircle.fill.g, 110, 255);
 sadCircle.fill.b = constrain(sadCircle.fill.b, 190, 255);
 
-
+ // Eyes (white part and pupils)
+  push();
+  noStroke();
+  fill(255);
+  ellipse(sadCircle.x - 60, sadCircle.y - 40, 50);
+  ellipse(sadCircle.x + 60, sadCircle.y - 40, 50);
+  fill(0);
+  ellipse(sadCircle.x - 60, sadCircle.y - 40, 35);
+  ellipse(sadCircle.x + 60, sadCircle.y - 40, 35);
+    fill(255);
+  ellipse(sadCircle.x - 70, sadCircle.y - 45, 10);
+  ellipse(sadCircle.x + 50, sadCircle.y - 45, 10);
+pop();
 
 }

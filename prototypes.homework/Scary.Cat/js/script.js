@@ -33,6 +33,9 @@ function setup() {
 function draw() {
  background(245, 245, 220);
 
+ cat.x = constrain(cat.x, 120, 380);
+  cat.y = constrain(cat.y, 150, 600);
+
   // Head
   push();
   noStroke();
@@ -82,4 +85,27 @@ fill("#4d3512");
     line(cat.x + 20, cat.y - 15, cat.x + 60, cat.y - 15);
     pop();
   }
+
+   let d = dist(mouseX, mouseY, cat.x, cat.y);
+
+   if (d < 250) {
+    eyesOpen = false;
+
+     // horizontal movement
+    if (mouseX < cat.x) {
+      cat.x = cat.x + 4;
+    } else {
+      cat.x = cat.x - 4;
+    }
+
+    // vertical movement
+    if (mouseY < cat.y) {
+      cat.y = cat.y + 4;
+    } else {
+      cat.y = cat.y - 4;
+    }
+  } else {
+    eyesOpen = true;
+  }
+
 }

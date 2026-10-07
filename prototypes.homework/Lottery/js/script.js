@@ -82,17 +82,21 @@ let circle6 = {
     g: 150,
     b: 150,
   },
+
 };
+
+
 
 function setup() {
   createCanvas(600, 700);
+
+
 }
 
 
 
 function draw() {
 background("#4caf7a");
-
 
 
 //ticket
@@ -102,12 +106,12 @@ background("#4caf7a");
   rect(100, 60, 400, 560);
   pop();
 
-    // Blue strip on the right
+// Blue strip 
   noStroke();
   fill("#5bbad0");
   rect(430, 60, 70, 560);
 
-    // Small white marks on the strip
+    // Small white marks
   fill(255);
   rect(455, 120, 20, 8);
   rect(455, 220, 20, 8);
@@ -149,23 +153,31 @@ background("#4caf7a");
 
   pop();
 
+ 
+ {
+
+function pickWinner() {
+let pickCircle = random(1, 7);
+
+if (pick === 1) {
+  circle1.prize = true;
+} else if (pick === 2) {
+  circle2.prize = true;
+} else if (pick === 3) {
+  circle3.prize = true;
+} else if (pick === 4) {
+  circle4.prize = true;
+} else if (pick === 5) {
+  circle5.prize = true;
+} else {
+  circle6.prize = true;
 }
 
-function mousePressed() {
-  let d = dist(mouseX, mouseY, circle1.x, circle1.y);
 
-  if (d < circle1.size / 2 && circle1.revealed === false) {
-    circle1.revealed = true;
 
-    if (random(0, 1) < 0.1) {
-      circle1.fill.r = 255;
-      circle1.fill.g = 200;
-      circle1.fill.b = 0;
-    } else {
-      circle1.fill.r = 200;
-      circle1.fill.g = 50;
-      circle1.fill.b = 60;
-    }
+}
+
   }
-}
 
+
+ }

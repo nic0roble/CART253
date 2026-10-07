@@ -1,24 +1,54 @@
 /**
- * Title of Project
- * Author Name
+ * Falling Star
+ * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
-function setup() {
 
+let star = {
+  x: 300,
+  y: 0,
+  size: 60,
+  speed: 2,
+  fill: {
+    r: 255,
+    g: 230,
+    b: 100,
+  },
+};
+
+let sky = {
+  r: 40,
+  g: 60,
+  b: 120,
+};
+
+let caughtStar = false;
+
+function setup() {
+createCanvas(500, 700);
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+ background(sky.r, sky.g, sky.b);
+
+  push();
+  noStroke();
+  fill(star.fill.r, star.fill.g, star.fill.b);
+  ellipse(star.x, star.y, star.size);
+  pop();
+
+ if (caughtStar === false && star.y < height) {
+    star.y = star.y + star.speed;
+}
+
 
 }

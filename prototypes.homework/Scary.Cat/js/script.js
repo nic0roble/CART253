@@ -39,5 +39,13 @@ function draw() {
   fill(cat.fill.r, cat.fill.g, cat.fill.b);
   ellipse(cat.x, cat.y, cat.size);
   pop();
+
+   // Ears
+  push();
+  noStroke();
+  fill(cat.fill.r, cat.fill.g, cat.fill.b);
+  triangle(cat.x - 90, cat.y - 40, cat.x - 40, cat.y - 130, cat.x - 10, cat.y - 80);
+  triangle(cat.x + 90, cat.y - 40, cat.x + 40, cat.y - 130, cat.x + 10, cat.y - 80);
+  pop();
   
 }

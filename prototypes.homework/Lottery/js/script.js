@@ -161,7 +161,7 @@ background("#4caf7a");
   ellipse(circle6.x, circle6.y, circle6.size);
 
 
-// Lines under the circles, like the numbers on the ticket
+// Lines under the circles
   fill(0);
   rect(125, 290, 70, 3);
   rect(225, 290, 70, 3);

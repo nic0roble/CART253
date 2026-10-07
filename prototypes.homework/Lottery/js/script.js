@@ -85,19 +85,38 @@ let circle6 = {
 
 };
 
+let winnerChosen = false;
 
 
 function setup() {
   createCanvas(600, 700);
-
-
 }
+
 
 
 
 function draw() {
 background("#4caf7a");
 
+ if (winnerChosen === false) {
+    let pick = random(1, 7);
+
+    if (pick === 1) {
+      circle1.prize = true;
+    } else if (pick === 2) {
+      circle2.prize = true;
+    } else if (pick === 3) {
+      circle3.prize = true;
+    } else if (pick === 4) {
+      circle4.prize = true;
+    } else if (pick === 5) {
+      circle5.prize = true;
+    } else {
+      circle6.prize = true;
+    }
+    }
+
+    winnerChosen = true;
 
 //ticket
  push();
@@ -153,31 +172,34 @@ background("#4caf7a");
 
   pop();
 
+}
+
+  function mousePressed() {
+  reveal(circle1);
+  reveal(circle2);
+  reveal(circle3);
+  reveal(circle4);
+  reveal(circle5);
+  reveal(circle6);
+ } 
  
- {
+ function reveal(circle) {
+  let d = dist(mouseX, mouseY, circle.x, circle.y);
 
-function pickWinner() {
-let pickCircle = random(1, 7);
+  if (d < circle.size / 2 && circle.revealed === false) {
+    circle.revealed = true;
 
-if (pick === 1) {
-  circle1.prize = true;
-} else if (pick === 2) {
-  circle2.prize = true;
-} else if (pick === 3) {
-  circle3.prize = true;
-} else if (pick === 4) {
-  circle4.prize = true;
-} else if (pick === 5) {
-  circle5.prize = true;
-} else {
-  circle6.prize = true;
-}
-
-
-
-}
-
+    if (circle.prize === true) {
+      circle.fill.r = 255;
+      circle.fill.g = 200;
+      circle.fill.b = 0;
+    } else {
+      circle.fill.r = 200;
+      circle.fill.g = 50;
+      circle.fill.b = 60;
+    }
   }
+}
 
 
- }
+

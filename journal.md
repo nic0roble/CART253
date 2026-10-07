@@ -22,4 +22,7 @@ Working with variables, using only the techniques we learned in class, has been 
 
 What surprised me, and also challenged me, was controlling time in my projects. In my sad circle, it was very hard to make it wait a few seconds before the face started turning blue. It took many tests and errors, but once I figured it out, I was able to apply the same idea in a different way in my flowers, where each one starts growing at its own moment. Of my three projects, the one I enjoyed making the most was definitely the flowers. It took the longest because of how many objects I had to manage, but I liked it the most because of the result. I though, my favorite was the eye that follows the cursor, and in the future I would like to explore that concept further.
 
+## October 07, 2026
+This time I worked with conditionals. To be honest, it was a bit hard for me to understand how they worked in class, but doing this assignment made certain things much clearer to me. I liked how varied conditionals can be. For example, in my falling stars it feels like a small game, and I really enjoyed creating it. A star falls, and depending on whether you touch it in time, it shines or goes out and the sky gets darker. What I found difficult was writing so much code. There were moments when I got lost and had to read everything again to remember where I was. Here I felt it was crucial to name everything clearly, because otherwise it became impossible to keep organized.
+
 ![My website](images/screenshot.jpeg)

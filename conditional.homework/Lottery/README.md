@@ -2,7 +2,7 @@
 
 Nicolas Robledo Sanchez
 
-[View this project online](https://nic0roble.github.io/CART253/prototypes.homework/Lottery/)
+[View this project online](https://nic0roble.github.io/CART253/conditional.homework/Lottery/)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 Nicolas Robledo Sanchea
 
-[View this project online](https://nic0roble.github.io/CART253/prototypes.homework/Scary.Cat/)
+[View this project online](https://nic0roble.github.io/CART253/conditional.homework/Scary.Cat/)
 
 ## Description
 

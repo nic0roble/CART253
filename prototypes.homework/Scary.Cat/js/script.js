@@ -63,4 +63,23 @@ fill("#4d3512");
   line(cat.x, cat.y + 30, cat.x + 30, cat.y + 45);
   pop();
 
+  // Eyes
+  if (eyesOpen === true) {
+    push();
+    noStroke();
+    fill(255);
+    ellipse(cat.x - 40, cat.y - 15, 40);
+    ellipse(cat.x + 40, cat.y - 15, 40);
+    fill(0);
+    ellipse(cat.x - 40, cat.y - 7, 25);
+    ellipse(cat.x + 40, cat.y - 7, 25);
+    pop();
+  } else {
+    push();
+    stroke(0);
+    strokeWeight(5);
+    line(cat.x - 60, cat.y - 15, cat.x - 20, cat.y - 15);
+    line(cat.x + 20, cat.y - 15, cat.x + 60, cat.y - 15);
+    pop();
+  }
 }

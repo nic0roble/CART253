@@ -50,5 +50,17 @@ function draw() {
     star.y = star.y + star.speed;
 }
 
+ let d = dist(mouseX, mouseY, star.x, star.y);
+
+   if (d < star.size / 2 && caught === false && star.y < height) {
+    caught = true;
+    star.fill.r = 255;
+    star.fill.g = 255;
+    star.fill.b = 255;
+    star.size = 120;
+     }
+
+    
+
 
 }

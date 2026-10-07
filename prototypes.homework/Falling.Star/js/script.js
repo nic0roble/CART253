@@ -188,7 +188,47 @@ function draw() {
     star5.size = 120;
   }
 
- 
+  // Stars that touch the ground
+  if (star.y >= height && caughtStar === false) {
+    star.fill.r = 90;
+    star.fill.g = 90;
+    star.fill.b = 90;
+    sky.r = 5;
+    sky.g = 5;
+    sky.b = 20;
+  }
+  if (star2.y >= height && caughtStar2 === false) {
+    star2.fill.r = 90;
+    star2.fill.g = 90;
+    star2.fill.b = 90;
+    sky.r = 5;
+    sky.g = 5;
+    sky.b = 20;
+  }
+  if (star3.y >= height && caughtStar3 === false) {
+    star3.fill.r = 90;
+    star3.fill.g = 90;
+    star3.fill.b = 90;
+    sky.r = 5;
+    sky.g = 5;
+    sky.b = 20;
+  }
+  if (star4.y >= height && caughtStar4 === false) {
+    star4.fill.r = 90;
+    star4.fill.g = 90;
+    star4.fill.b = 90;
+    sky.r = 5;
+    sky.g = 5;
+    sky.b = 20;
+  }
+  if (star5.y >= height && caughtStar5 === false) {
+    star5.fill.r = 90;
+    star5.fill.g = 90;
+    star5.fill.b = 90;
+    sky.r = 5;
+    sky.g = 5;
+    sky.b = 20;
    
 }
  }
+}

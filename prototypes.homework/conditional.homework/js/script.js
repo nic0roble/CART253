@@ -24,20 +24,14 @@ function setup() {
 
 
 function draw() {
-background("#ca844f");
+background(245, 245, 220);
 
 //ticket
  push();
   noStroke();
-  fill("#fde78e");
+  fill(255);
   rect(150, 200, 300, 200);
   pop();
 
- // Circle
-  push();
-  noStroke();
-  fill(circle1.fill.r, circle1.fill.g, circle1.fill.b);
-  ellipse(circle1.x, circle1.y, circle1.size);
-  pop();
 
 }

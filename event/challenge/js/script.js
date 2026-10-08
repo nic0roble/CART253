@@ -1,5 +1,5 @@
 /**
- * Conditional challenge
+ * Event challenge
  * Nicolas Robledo Sanchez
  */
 /**

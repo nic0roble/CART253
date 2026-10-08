@@ -1,4 +1,4 @@
-# Conditional class work
+# Event class work
 
 Nicolas Robledo Sanchez
 

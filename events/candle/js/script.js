@@ -31,4 +31,9 @@ if (flameSize > 0) {
   fill(250, 245, 230);
   rect(220, 340, 80, 200);
 
+// Candle cord
+  stroke(0);
+  strokeWeight(4);
+  line(260, 340, 260, 310);
+
 }

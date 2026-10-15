@@ -10,6 +10,11 @@
 
 let flameSize = 60;
 
+function mouseWheel(event) {
+//Scrolling makes the flame bigger or smaller
+  flameSize = flameSize - event.delta;
+  flameSize = constrain(flameSize, 0, 1000);
+ }
 function setup() {
 createCanvas(500, 700);
 }
@@ -36,4 +41,12 @@ if (flameSize > 0) {
   strokeWeight(4);
   line(260, 340, 260, 310);
 
+    // Flame
+  noStroke();
+  if (flameSize > 0) {
+    fill(255, 140, 0);
+    ellipse(260, 290, flameSize, flameSize + 40);
+    fill(255, 220, 0);
+    ellipse(260, 295, flameSize - 20, flameSize + 10);
+  }
 }

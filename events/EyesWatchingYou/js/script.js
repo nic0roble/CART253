@@ -11,7 +11,9 @@
 
 let blinking = false;
 
-
+function openEyes() {
+  blinking = false;
+}
 
 
 function setup() {
@@ -43,3 +45,7 @@ background(230, 220, 200);
  }
 }
 
+function mousePressed() {
+  blinking = true;
+  setTimeout(openEyes, 200);
+}

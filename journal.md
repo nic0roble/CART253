@@ -25,4 +25,10 @@ What surprised me, and also challenged me, was controlling time in my projects. 
 ## October 07, 2026
 This time I worked with conditionals. To be honest, it was a bit hard for me to understand how they worked in class, but doing this assignment made certain things much clearer to me. I liked how varied conditionals can be. For example, in my falling stars it feels like a small game, and I really enjoyed creating it. A star falls, and depending on whether you touch it in time, it shines or goes out and the sky gets darker. What I found difficult was writing so much code. There were moments when I got lost and had to read everything again to remember where I was. Here I felt it was crucial to name everything clearly, because otherwise it became impossible to keep organized.
 
+## October 21, 2026
+I really enjoyed working with events. Of all the topics we have seen in class, this is my favorite so far, mostly because it is the one I have understood the best. I also like how organized my scripts are in this assignment. In previous assignments my code felt chaotic because of how many variables I was using, but with events everything feels more orderly.I made three prototypes: Eyes Watching You (mouse), Plant Growing (time) and The Candle (mouse wheel). What I like most is how different kinds of tools fit together: the keyboard, the clicks and the mouse wheel each create a different kind of experience. It also opens the possibility of adding text and more interaction in the future.
+
+Some parts were difficult. A few mistakes did not show up in Visual Studio Code, only in the console when I inspected the page in the browser. I learned that even a single spelling mistake can stop the whole program from running. In my eyes project, I also had a problem where the pupils were not showing up. The code that drew them was outside of the else block, so it ran at the wrong time. I was stuck on it for a long time until I finally found the problem and fixed it. I would like to develop the candle further, maybe by adding text or more interaction on a future.
+
+
 ![My website](images/screenshot.jpeg)

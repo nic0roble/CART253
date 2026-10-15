@@ -4,7 +4,7 @@
 
 ![alt text](image-3.png)
 
-[View this project online](https://nic0roble.github.io/CART253/prototypes/instructions/prototype.3.weird/)
+[View this project online](https://nic0roble.github.io/CART253/prototypes.homework/Falling.Star/)
 
 # Scary Cat
 

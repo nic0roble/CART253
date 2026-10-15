@@ -3,7 +3,7 @@
  * Nicolas Robledo Sanchez
  * 
  * I created a plant that grows with time. 
- * If you click the plant it make it shrink. But, after 3 seconds it recovers.
+ * If you click any key the plant it make it shrink. But, after 3 seconds it recovers.
  * It starts growing again and at the end a flower appears. 
  */
 
@@ -14,7 +14,7 @@ let dying = false;
 
 function grow() {
  if (dying === false) {
-    plantHeight = constrain(plantHeight + 10, 20, 450);
+    plantHeight = constrain(plantHeight + 10, 20, 500);
   }
 }
 
@@ -75,24 +75,31 @@ background(200, 230, 255);
     ellipse(276, 480, 50, 20);
   }
 //3rd leaves
-if (plantHeight > 230) {
+if (plantHeight > 280) {
     ellipse(225, 400, 50, 20);
     ellipse(276, 400, 50, 20);
   }
 
 // 4th leaves
-  if (plantHeight > 340) {
+  if (plantHeight > 370) {
     ellipse(225, 320, 50, 20);
     ellipse(276, 320, 50, 20);
   }
 
 // 5th leaves
-  if (plantHeight > 420) {
+  if (plantHeight > 450) {
     ellipse(225, 240, 50, 20);
     ellipse(276, 240, 50, 20);
   }
  
+ // Flower when the plant is fully grown
+
+  if (plantHeight >= 500 && dying === false) {
+    fill("#f0edea");
+    ellipse(250, 170, 85);
+    fill("#f0c84f");
+    ellipse(250, 170, 60);
 
 }
 
-
+ }

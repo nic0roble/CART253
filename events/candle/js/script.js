@@ -2,8 +2,8 @@
  * The Candle
  * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I created a candle that by using the mousewheel you can make the flame bigger or smaller.
+ * If you turn of the flame the background is going to get darker.
  */
 
 "use strict";
@@ -35,6 +35,19 @@ if (flameSize > 0) {
     background(30);
   }
 
+//furniture
+noStroke();
+fill("#533b09");
+rect(60, 540, 380, 160); 
+
+ // Drawer
+  fill("#7a5a1e");
+  rect(90, 565, 320, 110);
+
+ // Drawer knob
+  fill(240, 220, 150);
+  ellipse(250, 620, 40);
+
 // Candle
   noStroke();
   fill(250, 245, 230);
@@ -54,13 +67,4 @@ if (flameSize > 0) {
     ellipse(260, 295, flameSize - 20, flameSize + 10);
   }
 
-//furniture
-noStroke();
-fill("#533b09");
-rect(60, 540, 380, 160); 
-
- // Drawer
-  fill("#7a5a1e");
-  rect(90, 565, 320, 110);
-  
 }

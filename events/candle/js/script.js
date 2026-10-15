@@ -26,5 +26,9 @@ if (flameSize > 0) {
     background(30);
   }
 
+// Candle
+  noStroke();
+  fill(250, 245, 230);
+  rect(220, 340, 80, 200);
 
 }

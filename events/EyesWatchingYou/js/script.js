@@ -18,9 +18,12 @@ function openEyes() {
 
 function setup() {
   createCanvas(700, 600);
-
 }
 
+function mousePressed() {
+  blinking = true;
+  setTimeout(openEyes, 200);
+}
 
 function draw() {
 background(230, 220, 200);
@@ -38,14 +41,17 @@ background(230, 220, 200);
   // White thing of the eyes
 
  else {
-   
+    noStroke();
     fill(255);
     ellipse(250, 300, 120);
     ellipse(450, 300, 120);
- }
-}
 
-function mousePressed() {
-  blinking = true;
-  setTimeout(openEyes, 200);
-}
+// pupils and color
+stroke("#964B00");
+strokeWeight(10);
+fill(0);
+    ellipse(constrain(mouseX, 235, 265), constrain(mouseY, 285, 315), 40);
+    ellipse(constrain(mouseX, 435, 465), constrain(mouseY, 285, 315), 40);
+  }
+   }
+

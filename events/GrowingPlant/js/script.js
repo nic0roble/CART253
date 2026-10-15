@@ -22,4 +22,11 @@ createCanvas(500, 700);
 function draw() {
 background(200, 230, 255);
 
+
+ // Ground
+  noStroke();
+  fill(120, 80, 40);
+  rect(0, 620, 700, 80);
+
+
 }

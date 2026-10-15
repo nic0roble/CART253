@@ -10,11 +10,14 @@
 
 let flameSize = 60;
 
-function mouseWheel(event) {
 //Scrolling makes the flame bigger or smaller
+
+function mouseWheel(event) {
   flameSize = flameSize - event.delta;
   flameSize = constrain(flameSize, 0, 1000);
  }
+
+
 function setup() {
 createCanvas(500, 700);
 }
@@ -22,6 +25,7 @@ createCanvas(500, 700);
 
 
 function draw() {
+
 //the place gets darker with the height of the candle
 
 if (flameSize > 0) {
@@ -49,4 +53,14 @@ if (flameSize > 0) {
     fill(255, 220, 0);
     ellipse(260, 295, flameSize - 20, flameSize + 10);
   }
+
+//furniture
+noStroke();
+fill("#533b09");
+rect(60, 540, 380, 160); 
+
+ // Drawer
+  fill("#7a5a1e");
+  rect(90, 565, 320, 110);
+  
 }

@@ -4,7 +4,7 @@
 
 ![photo](image.png)
 
-[View this project online](https://nic0roble.github.io/CART253/prototypes/instructions/prototype.3.weird/)
+[View this project online](https://nic0roble.github.io/CART253/variables-prototype-1/variables/flower/)
 
 # Sad Face
 

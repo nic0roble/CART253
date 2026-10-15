@@ -80,6 +80,19 @@ if (plantHeight > 230) {
     ellipse(276, 400, 50, 20);
   }
 
+// 4th leaves
+  if (plantHeight > 340) {
+    ellipse(225, 320, 50, 20);
+    ellipse(276, 320, 50, 20);
+  }
+
+// 5th leaves
+  if (plantHeight > 420) {
+    ellipse(225, 240, 50, 20);
+    ellipse(276, 240, 50, 20);
+  }
+ 
+
 }
 
 

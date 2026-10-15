@@ -12,7 +12,7 @@ Here I will keep the work I do for my CART253 class.
 
 ## My work
 
-* [Projects Varibales](Project Variables.md)
+* [Projects Varibales](ProjectVariables.md)
 
 Flowers Blooming
 

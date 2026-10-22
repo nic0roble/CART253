@@ -20,7 +20,7 @@ const ball = {
     }
 };
 
-// Our second ball (misma estructura que la primera)
+// Our second ball 
 const ball_2 = {
     x: 200,
     y: 15,

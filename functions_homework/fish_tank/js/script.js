@@ -38,6 +38,11 @@ drawTable();
 
 drawWater(tank);
 
+moveFish(fish1, tank);
+moveFish(fish2, tank);
+moveFish(fish3, tank);
+moveFish(fish4, tank);
+
 drawFish(fish1);
 drawFish(fish2);
 drawFish(fish3);

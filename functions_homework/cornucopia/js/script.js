@@ -72,3 +72,8 @@ function moveApple(apple) {
         resetApple(apple);
     }
 }
+
+function resetApple(apple) {
+    apple.y = -apple.height;
+    apple.x = random(20, width - 20);
+}

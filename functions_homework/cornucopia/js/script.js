@@ -1,24 +1,26 @@
 /**
- * Title of Project
- * Author Name
+ * Fruit Basket
+ * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I created a basket that moves with the mouse, with that basket the objective
+ * is to catch the apples that are falling. If an apple isn't catched the screen turns red.
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+let backgroundColor = "#f5e096";
+
 function setup() {
+createCanvas(700, 600);
 
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
-function draw() {
 
+function draw() {
+ background(backgroundColor);
+
+
+
+ 
 }

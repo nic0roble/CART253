@@ -16,6 +16,11 @@ const tank = {
 }
 
 //fishes
+const fish1 = { x: 150, y: 150, size: 30, speed: 1.5, color: "orange", wobble: 0.5 };
+const fish2 = { x: 250, y: 220, size: 40, speed: 1, color: "hotpink", wobble: 1.2 };
+const fish3 = { x: 320, y: 290, size: 25, speed: 2.5, color: "gold", wobble: 0.3 };
+const fish4 = { x: 200, y: 340, size: 35, speed: 1.8, color: "tomato", wobble: 0.8 };
+
 
 
 function setup() {
@@ -30,9 +35,19 @@ function draw() {
 
 drawTable();
 
+
 drawWater(tank);
 
+drawFish(fish1);
+drawFish(fish2);
+drawFish(fish3);
+drawFish(fish4);
+
 drawGlass(tank);
+
+
+
+
 
 }
 
@@ -59,4 +74,19 @@ function drawWater(tank) {
     fill("#a6cfba");
     rect(tank.x, tank.y, tank.size);
     pop();
+}
+
+function drawFish(fish) {
+    push();
+    noStroke();
+    fill(fish.color);
+    // body
+    ellipse(fish.x, fish.y, fish.size * 1.5, fish.size);
+    // tale
+    triangle(
+        fish.x - fish.size * 0.7, fish.y,
+        fish.x - fish.size * 1.1, fish.y - fish.size * 0.4,
+        fish.x - fish.size * 1.1, fish.y + fish.size * 0.4
+    );
+
 }

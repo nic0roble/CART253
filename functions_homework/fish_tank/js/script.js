@@ -43,6 +43,11 @@ moveFish(fish2, tank);
 moveFish(fish3, tank);
 moveFish(fish4, tank);
 
+handleBounce(fish1, tank);
+handleBounce(fish2, tank);
+handleBounce(fish3, tank);
+handleBounce(fish4, tank);
+
 drawFish(fish1);
 drawFish(fish2);
 drawFish(fish3);
@@ -88,6 +93,19 @@ function moveFish(fish, tank) {
     if (fish.x + fish.size * 0.75 > tank.x + tank.size) {
   
         fish.x = tank.x + fish.size * 1.1;
+    }
+}
+
+function handleBounce(fish, tank) {
+    // Borde derecho
+    if (fish.x + fish.size > tank.x + tank.size) {
+        fish.speed = fish.speed * -1;
+    }
+
+    // Borde izquierdo
+    if (fish.x - fish.size < tank.x) {
+        fish.speed = fish.speed * -1;
+
     }
 }
 

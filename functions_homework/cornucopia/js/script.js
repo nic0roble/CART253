@@ -42,6 +42,10 @@ moveApple(apple1);
 moveApple(apple2);
 moveApple(apple3);
 
+catchApple(apple1, basket);
+catchApple(apple2, basket);
+catchApple(apple3, basket);
+
 }
 
 function drawBasket(basket) {
@@ -59,7 +63,7 @@ function moveBasket(basket) {
 function drawApple(apple) {
     push();
     noStroke();
-    fill("#c1121f");
+    fill("#8d1820");
     ellipse(apple.x, apple.y, apple.width, apple.height);
     pop();
 }
@@ -80,7 +84,7 @@ function resetApple(apple) {
 
 function catchApple(apple, basket) {
     if (checkOverlap(apple, basket)) {
-        backgroundColor = "#bfe3f5";
+        backgroundColor = "#f5e096";
         resetApple(apple);
     }
 }

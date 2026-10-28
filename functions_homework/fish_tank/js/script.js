@@ -8,6 +8,16 @@
 
 "use strict";
 
+//tank
+const tank = {
+    x: 100,
+    y: 80,
+    size: 300,
+}
+
+//fishes
+
+
 function setup() {
   createCanvas(500, 500);
 }
@@ -16,4 +26,27 @@ function setup() {
 
 function draw() {
    background("#f5e6d3");
+
+
+drawTable();
+
+drawGlass(tank);
+
 }
+
+function drawTable() {
+    push();
+    noStroke();
+    fill("#8b5a2b");
+    rect(0, tank.y + tank.size, width, height);
+    pop();
+}
+
+function drawGlass(tank) {
+    push();
+    noFill();
+    stroke(255, 255, 255, 220);
+    strokeWeight(6);
+    rect(tank.x, tank.y, tank.size, tank.size);
+    pop();
+    }

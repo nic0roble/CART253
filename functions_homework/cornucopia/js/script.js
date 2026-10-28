@@ -17,6 +17,10 @@ const basket = {
     height: 35
 };
 
+const apple1 = { x: 120, y: -20, width: 28, height: 28, speed: 2 };
+const apple2 = { x: 350, y: -200, width: 28, height: 28, speed: 3 };
+const apple3 = { x: 580, y: -100, width: 28, height: 28, speed: 2.5 };
+
 
 function setup() {
 createCanvas(700, 600);
@@ -29,9 +33,11 @@ function draw() {
  background(backgroundColor);
 
 drawBasket(basket);
-
 moveBasket(basket);
 
+drawApple(apple1);
+drawApple(apple2);
+drawApple(apple3);
 }
 
 function drawBasket(basket) {
@@ -44,4 +50,12 @@ function drawBasket(basket) {
 
 function moveBasket(basket) {
     basket.x = mouseX;
+}
+
+function drawApple(apple) {
+    push();
+    noStroke();
+    fill("#c1121f");
+    ellipse(apple.x, apple.y, apple.width, apple.height);
+    pop();
 }

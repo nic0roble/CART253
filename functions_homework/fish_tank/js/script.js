@@ -97,12 +97,12 @@ function moveFish(fish, tank) {
 }
 
 function handleBounce(fish, tank) {
-    // Borde derecho
+    // right side
     if (fish.x + fish.size > tank.x + tank.size) {
         fish.speed = fish.speed * -1;
     }
 
-    // Borde izquierdo
+    // left side
     if (fish.x - fish.size < tank.x) {
         fish.speed = fish.speed * -1;
 

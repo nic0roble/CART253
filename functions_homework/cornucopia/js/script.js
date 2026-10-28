@@ -77,3 +77,17 @@ function resetApple(apple) {
     apple.y = -apple.height;
     apple.x = random(20, width - 20);
 }
+
+function catchApple(apple, basket) {
+    if (checkOverlap(apple, basket)) {
+        backgroundColor = "#bfe3f5";
+        resetApple(apple);
+    }
+}
+
+function checkOverlap(rectA, rectB) {
+    return (rectA.x + rectA.width / 2 > rectB.x - rectB.width / 2 &&
+        rectA.x - rectA.width / 2 < rectB.x + rectB.width / 2 &&
+        rectA.y + rectA.height / 2 > rectB.y - rectB.height / 2 &&
+        rectA.y - rectA.height / 2 < rectB.y + rectB.height / 2);
+}

@@ -37,6 +37,6 @@ function drawBasket(basket) {
     push();
     noStroke();
     fill("#8b5a2b");
-    rect(basket.x - basket.width / 2, basket.y - basket.height / 2, basket.width, basket.height);
+     arc(basket.x, basket.y - basket.height / 2, basket.width, basket.height * 2, 0, PI);
     pop();
 }

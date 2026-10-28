@@ -1,24 +1,19 @@
 /**
- * Title of Project
- * Author Name
+ * Fish tank
+ * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I created a fish tank were all the fishes move at different speeds 
+ * and when they touch the sides of the tank they change there trajectory
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
 function setup() {
-
+  createCanvas(500, 500);
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
-function draw() {
 
+function draw() {
+   background("#f5e6d3");
 }

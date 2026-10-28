@@ -16,10 +16,10 @@ const tank = {
 }
 
 //fishes
-const fish1 = { x: 150, y: 150, size: 30, speed: 1.5, color: "orange", wobble: 0.5 };
-const fish2 = { x: 250, y: 220, size: 40, speed: 1, color: "hotpink", wobble: 1.2 };
-const fish3 = { x: 320, y: 290, size: 25, speed: 2.5, color: "gold", wobble: 0.3 };
-const fish4 = { x: 200, y: 340, size: 35, speed: 1.8, color: "tomato", wobble: 0.8 };
+const fish1 = { x: 150, y: 150, size: 30, speed: 1.5, color: "#daa648" };
+const fish2 = { x: 250, y: 220, size: 40, speed: 1, color: "#8b1952" };
+const fish3 = { x: 320, y: 290, size: 25, speed: 2.5, color: "#6c84d2" };
+const fish4 = { x: 200, y: 340, size: 35, speed: 1.8, color: "#f48470" };
 
 
 

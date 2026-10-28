@@ -88,5 +88,11 @@ function drawFish(fish) {
         fish.x - fish.size * 1.1, fish.y - fish.size * 0.4,
         fish.x - fish.size * 1.1, fish.y + fish.size * 0.4
     );
+   // eyes
+    fill("#ffffff");
+    ellipse(fish.x + fish.size * 0.4, fish.y - fish.size * 0.1, fish.size * 0.25);
+    fill("#000000");
+    ellipse(fish.x + fish.size * 0.45, fish.y - fish.size * 0.1, fish.size * 0.1);
+    pop();
 
 }

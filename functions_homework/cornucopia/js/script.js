@@ -30,6 +30,7 @@ function draw() {
 
 drawBasket(basket);
 
+moveBasket(basket);
 
 }
 
@@ -39,4 +40,8 @@ function drawBasket(basket) {
     fill("#8b5a2b");
      arc(basket.x, basket.y - basket.height / 2, basket.width, basket.height * 2, 0, PI);
     pop();
+}
+
+function moveBasket(basket) {
+    basket.x = mouseX;
 }

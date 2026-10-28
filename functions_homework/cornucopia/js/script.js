@@ -9,6 +9,7 @@
 "use strict";
 
 let backgroundColor = "#f5e096";
+let backgroundColor2 = "#ff0000";
 
 const basket = {
     x: 350,
@@ -21,6 +22,7 @@ const apple1 = { x: 120, y: -20, width: 28, height: 28, speed: 1 };
 const apple2 = { x: 350, y: -200, width: 28, height: 28, speed: 3 };
 const apple3 = { x: 580, y: -100, width: 28, height: 28, speed: 2.1 };
 
+let gameOver = false;
 
 function setup() {
 createCanvas(700, 600);
@@ -46,6 +48,11 @@ catchApple(apple1, basket);
 catchApple(apple2, basket);
 catchApple(apple3, basket);
 
+
+ if (gameOver) {
+    background(backgroundColor2);
+    noLoop();
+    }
 }
 
 function drawBasket(basket) {
@@ -73,7 +80,7 @@ function moveApple(apple) {
 
     if (apple.y > height) {
         backgroundColor = "#e63946";
-        resetApple(apple);
+        gameOver = true;
     }
 }
 

@@ -30,6 +30,8 @@ function draw() {
 
 drawTable();
 
+drawWater(tank);
+
 drawGlass(tank);
 
 }
@@ -47,6 +49,14 @@ function drawGlass(tank) {
     noFill();
     stroke(255, 255, 255, 220);
     strokeWeight(6);
-    rect(tank.x, tank.y, tank.size, tank.size);
+    rect(tank.x, tank.y, tank.size);
     pop();
     }
+
+function drawWater(tank) {
+    push();
+    noStroke();
+    fill("#a6cfba");
+    rect(tank.x, tank.y, tank.size);
+    pop();
+}

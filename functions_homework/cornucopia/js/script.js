@@ -17,9 +17,9 @@ const basket = {
     height: 35
 };
 
-const apple1 = { x: 120, y: -20, width: 28, height: 28, speed: 2 };
+const apple1 = { x: 120, y: -20, width: 28, height: 28, speed: 1 };
 const apple2 = { x: 350, y: -200, width: 28, height: 28, speed: 3 };
-const apple3 = { x: 580, y: -100, width: 28, height: 28, speed: 2.5 };
+const apple3 = { x: 580, y: -100, width: 28, height: 28, speed: 2.1 };
 
 
 function setup() {
@@ -38,6 +38,10 @@ moveBasket(basket);
 drawApple(apple1);
 drawApple(apple2);
 drawApple(apple3);
+moveApple(apple1);
+moveApple(apple2);
+moveApple(apple3);
+
 }
 
 function drawBasket(basket) {
@@ -58,4 +62,13 @@ function drawApple(apple) {
     fill("#c1121f");
     ellipse(apple.x, apple.y, apple.width, apple.height);
     pop();
+}
+
+function moveApple(apple) {
+    apple.y = apple.y + apple.speed;
+
+    if (apple.y > height) {
+        backgroundColor = "#e63946";
+        resetApple(apple);
+    }
 }

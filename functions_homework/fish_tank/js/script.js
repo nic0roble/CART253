@@ -87,7 +87,8 @@ function drawWater(tank) {
 }
 
 function moveFish(fish, tank) {
-    fish.x = fish.speed;
+    fish.x = fish.x + fish.speed;
+
 
 
     if (fish.x + fish.size * 0.75 > tank.x + tank.size) {

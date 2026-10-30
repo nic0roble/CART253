@@ -20,3 +20,5 @@ Here I will keep the work I do for my CART253 class.
 
 * [Project Events](ProjectEvents.md)
 
+* [Project Functions](ProjectFunctions.md)
+

@@ -1,6 +1,6 @@
 # Fish tank
 
-AUTHOR NAME
+Nicolas Robledo Sanchez
 
 [View this project online](https://nic0roble.github.io/CART253/functions_homework/fish_tank/)
 

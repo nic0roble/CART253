@@ -81,12 +81,19 @@ function drawFlower(flower) {
 
     // Stem
     stroke("#38761d");
-    strokeWeight(5);
-    line(flower.x, flower.y, flower.x, 480);
+strokeWeight(5);
+line(flower.x, flower.y, flower.x, 480);
 
     // Center of the flower
     fill("#e6e4e0");
-    noStroke();
-    ellipse(flower.x, flower.y, flower.size / 2);
+noStroke();
+ellipse(flower.x, flower.y, flower.size / 2);
 
+    // Petals of the flowers
+    noStroke();
+    fill("#d02626");
+ellipse(flower.x - flower.size / 2, flower.y, flower.size / 1.4);
+ellipse(flower.x + flower.size / 2, flower.y, flower.size / 1.4);
+ellipse(flower.x, flower.y - flower.size / 2, flower.size / 1.4);
+ellipse(flower.x, flower.y + flower.size / 2, flower.size / 1.4); 
 }

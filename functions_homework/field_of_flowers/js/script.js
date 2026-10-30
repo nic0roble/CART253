@@ -8,6 +8,12 @@
 
 "use strict";
 
+let flower1;
+let flower2;
+let flower3;
+let flower4;
+let flower5;
+let flower6;
 
 function setup() {
  createCanvas(700, 600);
@@ -16,6 +22,16 @@ function setup() {
 
 
 function draw() {
-  background("#f7a64a");
+  background("#fd8e86");
 
+drawGrass();
+
+}
+
+function drawGrass() {
+push();
+    noStroke();
+    fill("#456d34");
+    rect(0, 480, 800, 120);
+pop();
 }

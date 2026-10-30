@@ -1,24 +1,21 @@
 /**
- * Title of Project
- * Author Name
+ * Field of flowers
+ * Nicolas Robledo Sanchez
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I created a field of flowers that everytime the page is refresh
+ * this flowers change size, position,color,etc.
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
-function setup() {
 
+function setup() {
+ createCanvas(700, 600);
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
 function draw() {
+  background("#f7a64a");
 
 }

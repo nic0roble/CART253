@@ -83,4 +83,10 @@ function drawFlower(flower) {
     stroke("#38761d");
     strokeWeight(5);
     line(flower.x, flower.y, flower.x, 480);
+
+    // Center of the flower
+    fill("#e6e4e0");
+    noStroke();
+    ellipse(flower.x, flower.y, flower.size / 2);
+
 }

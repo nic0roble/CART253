@@ -19,6 +19,7 @@ let flower6;
 function setup() {
  createCanvas(700, 600);
 
+flower1 = createFlower();
 
 }
 
@@ -29,7 +30,20 @@ function draw() {
 
 drawGrass();
 drawTitle();
+
+drawFlower(flower1);
+
 }
+
+function createFlower() {
+    let flower = {
+        x: random(60, 700 - 60),
+        y: random(200, 420),
+        size: random(30, 60),
+    }; 
+return flower;
+}
+
 
 function drawGrass() {
 push();
@@ -48,4 +62,14 @@ function drawTitle() {
     textStyle(BOLD);
     text("My Flower Field", 700 / 2, 60);
     pop();
+}
+
+
+function drawFlower(flower) {
+    push();
+
+    // Stem
+    stroke("#38761d");
+    strokeWeight(5);
+    line(flower.x, flower.y, flower.x, 480);
 }

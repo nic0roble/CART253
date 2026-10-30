@@ -50,9 +50,16 @@ function createFlower() {
         x: random(60, 700 - 60),
         y: random(200, 420),
         size: random(30, 60),
+        petalColor: createPetalColor(),
     }; 
 return flower;
 }
+
+// make the petals change colors 
+function createPetalColor() {
+    let colors = ["#dc69ff", "#0095ff", "#ad3a3a", "#ff7f50", "#55d357", "#ffe14d"];
+    return random(colors);
+ }
 
 
 function drawGrass() {
@@ -91,7 +98,7 @@ ellipse(flower.x, flower.y, flower.size / 2);
 
     // Petals of the flowers
     noStroke();
-    fill("#d02626");
+    fill(flower.petalColor);
 ellipse(flower.x - flower.size / 2, flower.y, flower.size / 1.4);
 ellipse(flower.x + flower.size / 2, flower.y, flower.size / 1.4);
 ellipse(flower.x, flower.y - flower.size / 2, flower.size / 1.4);

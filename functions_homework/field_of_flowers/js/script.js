@@ -20,6 +20,11 @@ function setup() {
  createCanvas(700, 600);
 
 flower1 = createFlower();
+flower2 = createFlower();
+flower3 = createFlower();
+flower4 = createFlower();
+flower5 = createFlower();
+flower6 = createFlower();
 
 }
 
@@ -32,6 +37,11 @@ drawGrass();
 drawTitle();
 
 drawFlower(flower1);
+drawFlower(flower2);
+drawFlower(flower3);
+drawFlower(flower4);
+drawFlower(flower5);
+drawFlower(flower6);
 
 }
 
@@ -55,6 +65,7 @@ pop();
 
 function drawTitle() {
     push();
+    noStroke();
     fill("#456d34");
     textSize(48);
     textAlign(CENTER, CENTER);

@@ -12,6 +12,8 @@ const cookie = {
     x: 350,
     y: 280,
     size: 260,
+    
+isBroken: false
 
 }
 
@@ -46,13 +48,18 @@ function setup() {
 function draw() {
 background("#8b2e2e");
 
-drawWholeCookie(cookie);
+  if (cookie.isBroken) {
+    drawCookieHalves(cookie, 140);
+    }
+    else {
+        drawWholeCookie(cookie);
+
 
 for (let chip of chips) {
     drawChip(chip);
 }
 }
-
+}
 function drawWholeCookie(cookie) {
   push();
     noStroke();
@@ -73,4 +80,29 @@ function drawChip(chip) {
     pop();
     }
 
-   
+function drawCookieHalves(cookie, gap) {
+    push();
+    noStroke();
+
+    // Left 
+    fill("#b5792e");
+    arc(cookie.x - gap, cookie.y, cookie.size + 12, cookie.size + 12, HALF_PI, PI + HALF_PI, CHORD);
+    fill("#e0a64f");
+    arc(cookie.x - gap, cookie.y, cookie.size, cookie.size, HALF_PI, PI + HALF_PI, CHORD);
+
+    // Right 
+    fill("#b5792e");
+    arc(cookie.x + gap, cookie.y, cookie.size + 12, cookie.size + 12, -HALF_PI, HALF_PI, CHORD);
+    fill("#e0a64f");
+    arc(cookie.x + gap, cookie.y, cookie.size, cookie.size, -HALF_PI, HALF_PI, CHORD);
+    pop();
+}
+
+function mousePressed() {
+    if (cookie.isBroken) {
+        cookie.isBroken = false;
+    }
+    else {
+        cookie.isBroken = true;
+    }
+}

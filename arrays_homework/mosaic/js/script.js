@@ -33,6 +33,7 @@ function draw() {
         drawTile(tile);
     }
 
+    drawInstructions();
 }
 
 function drawTile(tile) {
@@ -63,3 +64,14 @@ function keyPressed() {
     let randomTile = random(tiles);
     changeTileColour(randomTile);
  }
+
+function drawInstructions() {
+    push();
+    noStroke();
+    fill("#f1ecec");
+    textSize(30);
+    textFont("OLYMPIA")
+    textAlign(CENTER, CENTER);
+    text("Press any key to change a tile", 300, 620);
+    pop();
+}

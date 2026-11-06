@@ -40,6 +40,8 @@ let chips = [
     { x: 450, y: 260, size: 20 }
 ];
 
+let currentFortune = "";
+
 
 function setup() {
  createCanvas(700, 600);
@@ -52,7 +54,7 @@ background("#8b2e2e");
 
 
 if (cookie.isBroken) {
-drawPaper(cookie)
+drawPaper(cookie,currentFortune)
 drawCookieHalves(cookie, cookieGap);
 
         
@@ -118,6 +120,7 @@ function mousePressed() {
     }
     else {
         cookie.isBroken = true;
+        currentFortune = random(fortunes);
     }
 }
 

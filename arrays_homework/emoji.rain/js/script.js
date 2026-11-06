@@ -14,10 +14,41 @@ let drops = [];
 
 function setup() {
  createCanvas(600, 700);
+
+   for (let i = 0; i < 20; i++) {
+        let newDrop = createDrop(random(0, 600), random(-700, 0));
+        drops.push(newDrop);
+    }
 }
+
 
 
 
 function draw() {
  background("skyblue");
+
+for (let drop of drops) {
+ drawDrop(drop);
+}
+
+}
+
+function drawDrop(drop) {
+    push();
+    textSize(drop.size);
+    textAlign(CENTER, CENTER);
+    text(drop.emoji, drop.x, drop.y);
+    pop();
+}
+
+
+function createDrop(x, y) {
+    let drop = {
+        x: x,
+        y: y,
+        emoji: random(emojis),
+        size: random(25, 60),
+        speed: random(1, 4)
+    };
+    return drop;
 }

@@ -39,7 +39,7 @@ function drawTile(tile) {
     push();
     stroke("#2c2a2a");
     strokeWeight(4);
-    fill(colours[tile.colourIndex]);
+    fill(tile.colour);
     rect(tile.x, tile.y, tile.size, tile.size);
     pop();
 }
@@ -49,8 +49,17 @@ function createTile(x, y) {
         x: x,
         y: y,
         size: 100,
-        colourIndex: floor(random(colours.length))
+        colour: random (colours)
     };
     return tile;
 }
 
+function changeTileColour(tile) {
+    tile.colour = random(colours);
+}
+
+
+function keyPressed() {
+    let randomTile = random(tiles);
+    changeTileColour(randomTile);
+ }

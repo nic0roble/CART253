@@ -96,7 +96,7 @@ function drawChip(chip, moveX) {
     pop();
 }
 
-function drawCookieHalves(cookie, cookiegap) {
+function drawCookieHalves(cookie, cookieGap) {
     push();
     noStroke();
 
@@ -133,7 +133,7 @@ function drawPaper(cookie, fortune) {
     rect(cookie.x - 135, cookie.y - 35, 270, 70, 6);
 
     // The fortune
-    fill("#333333");
+    fill("#181717");
     textSize(18);
     textAlign(CENTER, CENTER);
     text(fortune, cookie.x, cookie.y);

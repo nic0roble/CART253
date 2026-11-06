@@ -36,7 +36,6 @@ let tiles = [
 function setup() {
 createCanvas(600, 640);
 
-
 }
 
 

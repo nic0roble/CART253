@@ -32,6 +32,7 @@ for (let drop of drops) {
  moveDrop(drop);
 }
 
+drawInstructions();
 }
 
 function drawDrop(drop) {
@@ -66,4 +67,15 @@ function moveDrop(drop) {
 function mousePressed() {
     let newDrop = createDrop(mouseX, mouseY);
     drops.push(newDrop);
+}
+
+function drawInstructions() {
+    push();
+    noStroke();
+    fill("#df173f");
+    textSize(40);
+    textFont("OLYMPIA");
+    textAlign(CENTER, CENTER);
+    text("Click to add an emoji", 300, 670);
+    pop();
 }

@@ -14,12 +14,25 @@ let tiles = [];
 
 function setup() {
 createCanvas(600, 640);
+
+for (let row = 0; row < 6; row++) {
+        for (let column = 0; column < 6; column++) {
+            let newTile = createTile(column * 100, row * 100);
+            tiles.push(newTile);
+        }
+    }
+
 }
 
 
 
 function draw() {
  background("#2c2a2a");
+
+ for (let tile of tiles) {
+        drawTile(tile);
+    }
+
 }
 
 function drawTile(tile) {
@@ -30,3 +43,14 @@ function drawTile(tile) {
     rect(tile.x, tile.y, tile.size, tile.size);
     pop();
 }
+
+function createTile(x, y) {
+    let tile = {
+        x: x,
+        y: y,
+        size: 100,
+        colourIndex: floor(random(colours.length))
+    };
+    return tile;
+}
+

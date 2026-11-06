@@ -17,6 +17,8 @@ isBroken: false
 
 }
 
+let cookieGap = 140;
+
 let fortunes = [
     "Good things are coming",
     "Today is your lucky day",
@@ -48,17 +50,28 @@ function setup() {
 function draw() {
 background("#8b2e2e");
 
-  if (cookie.isBroken) {
-    drawCookieHalves(cookie, 140);
-    }
-    else {
-        drawWholeCookie(cookie);
 
+if (cookie.isBroken) {
+drawCookieHalves(cookie, cookieGap);
+
+        
+for (let chip of chips) {
+let moveX = cookieGap;
+if (chip.x < cookie.x) {
+moveX = -cookieGap;
+}
+drawChip(chip, moveX);
+}
+}
+else {
+drawWholeCookie(cookie);
 
 for (let chip of chips) {
-    drawChip(chip);
+drawChip(chip, 0);
 }
-}
+    }
+
+
 }
 function drawWholeCookie(cookie) {
   push();
@@ -72,29 +85,29 @@ function drawWholeCookie(cookie) {
     pop();
 }
 
-function drawChip(chip) {
+function drawChip(chip, moveX) {
     push();
     noStroke();
     fill("#4a2c17");
-    ellipse(chip.x, chip.y, chip.size, chip.size * 0.8);
+    ellipse(chip.x + moveX, chip.y, chip.size, chip.size * 0.8);
     pop();
-    }
+}
 
-function drawCookieHalves(cookie, gap) {
+function drawCookieHalves(cookie, cookiegap) {
     push();
     noStroke();
 
-    // Left 
+    // Left
     fill("#b5792e");
-    arc(cookie.x - gap, cookie.y, cookie.size + 12, cookie.size + 12, HALF_PI, PI + HALF_PI, CHORD);
+    arc(cookie.x - cookieGap, cookie.y, cookie.size + 12, cookie.size + 12, HALF_PI, PI + HALF_PI, CHORD);
     fill("#e0a64f");
-    arc(cookie.x - gap, cookie.y, cookie.size, cookie.size, HALF_PI, PI + HALF_PI, CHORD);
+    arc(cookie.x - cookieGap, cookie.y, cookie.size, cookie.size, HALF_PI, PI + HALF_PI, CHORD);
 
-    // Right 
+    // Right
     fill("#b5792e");
-    arc(cookie.x + gap, cookie.y, cookie.size + 12, cookie.size + 12, -HALF_PI, HALF_PI, CHORD);
+    arc(cookie.x + cookieGap, cookie.y, cookie.size + 12, cookie.size + 12, -HALF_PI, HALF_PI, CHORD);
     fill("#e0a64f");
-    arc(cookie.x + gap, cookie.y, cookie.size, cookie.size, -HALF_PI, HALF_PI, CHORD);
+    arc(cookie.x + cookieGap, cookie.y, cookie.size, cookie.size, -HALF_PI, HALF_PI, CHORD);
     pop();
 }
 

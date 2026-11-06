@@ -8,6 +8,21 @@
 
 "use strict";
 
+const cookie = {
+    x: 350,
+    y: 280,
+
+}
+
+let fortunes = [
+    "Good things are coming",
+    "Today is your lucky day",
+    "Take a break, you earned it",
+    "Your code will work soon",
+    "A surprise is on its way",
+];
+
+
 
 function setup() {
  createCanvas(700, 600);

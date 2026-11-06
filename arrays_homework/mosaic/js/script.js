@@ -10,17 +10,32 @@
 
 let colours = ["#e63946", "#f4a261", "#ffd166", "#2a9d8f", "#457b9d", "#9b5de5","#d832b4"];
 
-let tiles = [];
+let tiles = [
+
+    { x: 0, y: 0, size: 150, colour: "#e63946" },
+    { x: 150, y: 0, size: 150, colour: "#ffd166" },
+    { x: 300, y: 0, size: 150, colour: "#2a9d8f" },
+    { x: 450, y: 0, size: 150, colour: "#9b5de5" },
+
+    { x: 0, y: 150, size: 150, colour: "#457b9d" },
+    { x: 150, y: 150, size: 150, colour: "#f4a261" },
+    { x: 300, y: 150, size: 150, colour: "#e63946" },
+    { x: 450, y: 150, size: 150, colour: "#ffd166" },
+
+    { x: 0, y: 300, size: 150, colour: "#2a9d8f" },
+    { x: 150, y: 300, size: 150, colour: "#9b5de5" },
+    { x: 300, y: 300, size: 150, colour: "#457b9d" },
+    { x: 450, y: 300, size: 150, colour: "#f4a261" },
+
+    { x: 0, y: 450, size: 150, colour: "#e63946" },
+    { x: 150, y: 450, size: 150, colour: "#ffd166" },
+    { x: 300, y: 450, size: 150, colour: "#2a9d8f" },
+    { x: 450, y: 450, size: 150, colour: "#9b5de5" }
+];
 
 function setup() {
 createCanvas(600, 640);
 
-for (let row = 0; row < 6; row++) {
-        for (let column = 0; column < 6; column++) {
-            let newTile = createTile(column * 100, row * 100);
-            tiles.push(newTile);
-        }
-    }
 
 }
 

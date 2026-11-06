@@ -2,8 +2,8 @@
  * fortune cookie
  * Nicolas Robledo Sanchez
  * 
- * I created a fortune cookie that everytime it opens when you click on it,
- * it will appeared a random message.
+ * I created cookie that it opens when you click on it,
+ * when the cookie is open it will appeared a random message.
  */
 
 "use strict";
@@ -11,6 +11,7 @@
 const cookie = {
     x: 350,
     y: 280,
+    size: 260,
 
 }
 
@@ -33,5 +34,20 @@ function setup() {
 function draw() {
 background("#8b2e2e");
 
+drawWholeCookie(cookie);
 
 }
+
+function drawWholeCookie(cookie) {
+  push();
+    noStroke();
+    // Darker edge
+    fill("#b5792e");
+    ellipse(cookie.x, cookie.y, cookie.size + 12);
+    // Surface
+    fill("#e0a64f");
+    ellipse(cookie.x, cookie.y, cookie.size);
+    pop();
+}
+
+   

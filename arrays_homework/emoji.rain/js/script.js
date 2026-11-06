@@ -8,6 +8,9 @@
 
 "use strict";
 
+let emojis = ["🍎", "🌸", "⭐", "🐟", "🍪", "🦋", "🌙","✨","🔥","❤️","🦑"];
+
+let drops = [];
 
 function setup() {
  createCanvas(600, 700);

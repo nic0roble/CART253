@@ -52,6 +52,7 @@ background("#8b2e2e");
 
 
 if (cookie.isBroken) {
+drawPaper(cookie)
 drawCookieHalves(cookie, cookieGap);
 
         
@@ -118,4 +119,20 @@ function mousePressed() {
     else {
         cookie.isBroken = true;
     }
+}
+
+function drawPaper(cookie, fortune) {
+    push();
+    noStroke();
+
+    // The paper
+    fill("#ffffff");
+    rect(cookie.x - 135, cookie.y - 35, 270, 70, 6);
+
+    // The fortune
+    fill("#333333");
+    textSize(18);
+    textAlign(CENTER, CENTER);
+    text(fortune, cookie.x, cookie.y);
+    pop();
 }

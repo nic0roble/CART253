@@ -62,3 +62,8 @@ function moveDrop(drop) {
         drop.x = random(0, 600);
     }
 }
+
+function mousePressed() {
+    let newDrop = createDrop(mouseX, mouseY);
+    drops.push(newDrop);
+}

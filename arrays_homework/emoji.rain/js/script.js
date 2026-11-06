@@ -29,6 +29,7 @@ function draw() {
 
 for (let drop of drops) {
  drawDrop(drop);
+ moveDrop(drop);
 }
 
 }
@@ -51,4 +52,13 @@ function createDrop(x, y) {
         speed: random(1, 4)
     };
     return drop;
+}
+
+function moveDrop(drop) {
+    drop.y = drop.y + drop.speed;
+
+    if (drop.y > 740) {
+        drop.y = -40;
+        drop.x = random(0, 600);
+    }
 }

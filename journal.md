@@ -35,5 +35,14 @@ For this assignment we had to work with functions. At first, functions were quit
 
 The most difficult part to understand was the names inside the parentheses of a function, like in function moveFish(fish). The extra explanation helped me understand that these names are only a way to refer to the variables that will be affected when the function is called. My favorite exercise was field of flowers, because I could not only use functions but also add something I learned about arrays, like a list of colors that the program picks from randomly, so the field changes every time the page is refreshed. I also liked adding a title with text, which made it feel more finished.In the future, I would like to develop the fruit basket further by adding points and different kinds of fruit or maybe by having a nicer design for the basket.
 
+## November 06,2026
+
+Arrays turned out to be very practical for grouping many objects together. In the fortune cookie, I used one array for the messages and another one for the chocolate chips; in the emoji rain, I used an array of emojis and an array of falling drops; and in the mosaic, I used an array of colours and an array of tiles.
+
+What I liked the most was the use of emojis. I did not think a resource like this could be used in VS Code, because I thought it only accepted numbers, symbols or letters, never objects like an emoji. I also thought it was cool that I could add text to my prototypes, which helps me describe my functions and explain how I want people to interact with them.
+
+What surprised me was how much shorter the code becomes when a loop goes through an array: instead of drawing every chip or every tile one by one, I write the drawing function once and it works for all of them. What was difficult for me was understanding the loops that go through an array, and how the position of an element inside the array works, since it starts counting from zero. I also struggled to make the two halves of the cookie move together with their chips.
+
+In the future, I would like to develop the mosaic further, so that the tiles change colour when the mouse moves over them, and add more things to the cookie, maybe sounds like a crunch or something like that.
 
 ![My website](images/screenshot.jpeg)

@@ -24,6 +24,6 @@ Here I will keep the work I do for my CART253 class.
 
 * [Project Arrays](ProjectArrays.md)
 
-## My final proyect
+## My final project
 
 * [Final Project]()

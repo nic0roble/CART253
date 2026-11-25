@@ -8,6 +8,28 @@
 
 "use strict";
 
+// Counts since the game started
+let timer = 0;
+
+// This is when the sunset and the night begin
+const sunsetStart = 600;
+const nightStart = 1200;
+
+// The sun
+const sun = {
+    x: 780,
+    y: 100,
+    size: 110
+};
+
+// The moon
+const moon = {
+    x: 780,
+    y: 100,
+    size: 80
+};
+
+//the farmer 
 const farmer = {
     x: 450,
     y: 570,
@@ -17,7 +39,6 @@ const farmer = {
 };
 
 //this is my sunflowers array
-
 let sunflowers = [
     { x: 130, y: 500, stemHeight: 130, size: 65 },
     { x: 290, y: 500, stemHeight: 150, size: 70 },
@@ -35,9 +56,17 @@ createCanvas(900, 600);
 
 function draw() {
 background("#8ecae6");
+timer = timer + 1;
+  let phase = getPhase();
+  
+  drawGround(phase);
 
-  drawGround();
-  drawSun();
+if (phase === "night") {
+    drawMoon();
+}
+
+drawSun();
+drawSky(phase);
 
   drawFarmer(farmer);
   moveFarmer(farmer);
@@ -45,6 +74,7 @@ background("#8ecae6");
   for (let sunflower of sunflowers) {
         drawSunflower(sunflower);
     }
+
 
 }
 
@@ -55,13 +85,41 @@ function drawGround() {
     rect(0, 480, 900, 120);
     pop();
 }
-
+//this draws the sun 
 function drawSun() {
     push();
     noStroke();
     fill("#f3d080");
-    ellipse(780, 100, 110, 110);
+    ellipse(sun.x, sun.y, sun.size);
     pop();
+}
+
+function moveSun(phase) {
+    if (phase === "sunset") {
+        sun.y = sun.y + 0.6;
+    }
+}
+
+//this draws the moon
+function drawMoon() {
+    push();
+    noStroke();
+    fill("#f1f1e6");
+    ellipse(moon.x, moon.y, moon.size);
+    pop();
+}
+
+//this change the color of the sky on the phases
+function drawSky(phase) {
+    if (phase === "day") {
+        background("#8ecae6");
+    }
+    else if (phase === "sunset") {
+        background("#f4a261");
+    }
+    else {
+        background("#0b1d3a");
+    }
 }
 
 // this is the farmer
@@ -143,4 +201,17 @@ let flowerHeadY = sunflower.y - sunflower.stemHeight;
     ellipse(sunflower.x, flowerHeadY, sunflower.size * 0.6);
 
     pop();
+}
+
+//This is going to phase the day into "day", "sunset", and "night" 
+function getPhase() {
+    if (timer < sunsetStart) {
+        return "day";
+    }
+    else if (timer < nightStart) {
+        return "sunset";
+    }
+    else {
+        return "night";
+    }
 }

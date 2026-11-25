@@ -15,6 +15,12 @@ let timer = 0;
 const sunsetStart = 600;
 const nightStart = 1200;
 
+// True when a sunflower freezes
+let gameOver = false;
+
+// How long a cover lasts on the flowers
+const coverDuration = 420;
+
 // The sun
 const sun = {
     x: 780,
@@ -40,11 +46,11 @@ const farmer = {
 
 //this is my sunflowers array
 let sunflowers = [
-     { x: 130, y: 500, stemHeight: 130, size: 65, isCovered: false },
-    { x: 290, y: 500, stemHeight: 150, size: 70, isCovered: false },
-    { x: 450, y: 500, stemHeight: 120, size: 65, isCovered: false },
-    { x: 610, y: 500, stemHeight: 145, size: 70, isCovered: false },
-    { x: 770, y: 500, stemHeight: 135, size: 65, isCovered: false }
+    { x: 130, y: 500, stemHeight: 130, size: 65, coverTimer: 0, frost: 0, frostRate: 0.3 },
+    { x: 290, y: 500, stemHeight: 150, size: 70, coverTimer: 0, frost: 0, frostRate: 0.5 },
+    { x: 450, y: 500, stemHeight: 120, size: 65, coverTimer: 0, frost: 0, frostRate: 0.35 },
+    { x: 610, y: 500, stemHeight: 145, size: 70, coverTimer: 0, frost: 0, frostRate: 0.6 },
+    { x: 770, y: 500, stemHeight: 135, size: 65, coverTimer: 0, frost: 0, frostRate: 0.4 }
 ];
 
 // The array of stars
@@ -88,7 +94,8 @@ if (phase === "night") {
 drawGround(phase);
 
 
-  for (let sunflower of sunflowers) {
+for (let sunflower of sunflowers) {
+        updateSunflower(sunflower, phase);
         drawSunflower(sunflower);
     }
 
@@ -96,6 +103,11 @@ drawFarmer(farmer);
 moveFarmer(farmer);
 moveSun(phase);
 moveMoon(phase);
+
+if (gameOver) {
+drawGameOver();
+noLoop();
+    }
 
 }
 
@@ -257,14 +269,19 @@ let flowerHeadY = sunflower.y - sunflower.stemHeight;
 
     pop();
 
+
+// the flower turns icy blue as the frost goes up
+    fill(160, 210, 255, sunflower.frost * 2);
+    noStroke();
+    ellipse(sunflower.x, flowerHeadY, sunflower.size * 1.6);
+
     // Cover the sunflower
-    if (sunflower.isCovered) {
-        noStroke();
+    if (sunflower.coverTimer > 0) {
         fill("#dfe6f2");
         ellipse(sunflower.x, flowerHeadY, sunflower.size * 1.7, sunflower.size * 1.5);
         fill("#b8c4de");
         ellipse(sunflower.x, flowerHeadY + sunflower.size * 0.6, sunflower.size * 0.5, sunflower.size * 0.3);
-    }    
+    }  
 }
 
 // Covers the sunflower if the farmer is close enough to it
@@ -272,11 +289,40 @@ function coverSunflower(sunflower, farmer) {
     let distance = dist(farmer.x, farmer.y, sunflower.x, sunflower.y);
 
     if (distance < 100) {
-        sunflower.isCovered = true;
+        sunflower.coverTimer = coverDuration;
     }
 }
 
-// This runs once every time a key the "c" is pressed
+function updateSunflower(sunflower, phase) {
+    if (sunflower.coverTimer > 0) {
+        // the cover wears out and the frost goes down
+        sunflower.coverTimer = sunflower.coverTimer - 1;
+
+        if (sunflower.frost > 0) {
+            sunflower.frost = sunflower.frost - 0.5;
+        }
+    }
+    else if (phase === "night") {
+        // the frost goes up
+        sunflower.frost = sunflower.frost + sunflower.frostRate;
+
+        if (sunflower.frost >= 100) {
+            gameOver = true;
+        }
+    }
+}
+
+//this is a game over if a sunflower freezes
+function drawGameOver() {
+    push();
+    fill("#ffffff");
+    textSize(48);
+    textAlign(CENTER, CENTER);
+    text("A sunflower froze!", 450, 250);
+    pop();
+}
+
+// This runs once every time the key "c" is pressed
 function keyPressed() {
     if (key === "c") {
         for (let sunflower of sunflowers) {

@@ -29,7 +29,8 @@ background("#8ecae6");
   drawGround();
   drawSun();
 
-   drawFarmer(farmer);
+  drawFarmer(farmer);
+  moveFarmer(farmer);
 
 }
 
@@ -62,7 +63,7 @@ function drawFarmer(farmer) {
     rect(farmer.x - farmer.width / 2, farmer.y - farmer.height * 0.4, farmer.width, farmer.height * 0.4);
 
     // Head
-    fill("#ffd8c2");
+    fill("#cd9371");
     ellipse(farmer.x, farmer.y - farmer.height - 14, 34);
 
     // Hat
@@ -71,4 +72,28 @@ function drawFarmer(farmer) {
     ellipse(farmer.x, farmer.y - farmer.height - 30, 32, 20);
 
     pop();
+}
+
+
+ // Moves the farmer left or right while an arrow key is held down.
+ // He cannot leave the canvas.
+ 
+function moveFarmer(farmer) {
+    if (keyIsDown(LEFT_ARROW)) {
+        farmer.x = farmer.x - farmer.speed;
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+        farmer.x = farmer.x + farmer.speed;
+    }
+
+    // Left limit
+    if (farmer.x < 25) {
+        farmer.x = 25;
+    }
+
+    // Right limit
+    if (farmer.x > 875) {
+        farmer.x = 875;
+    }
 }

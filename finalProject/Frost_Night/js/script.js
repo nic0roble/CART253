@@ -21,8 +21,11 @@ let gameOver = false;
 // True when the player survives the night
 let gameWon = false;
 
-// When the night ends and the sun comes back
-const dawn = 2400;
+// The night ends and the sun comes back
+const dawnStart = 2400;
+
+// The day is back and the player wins
+const winTime = 3000;
 
 // How long a cover lasts on the flowers
 const coverDuration = 420;
@@ -86,17 +89,21 @@ let phase = getPhase();
 
 drawSky(phase);
 
-
 if (phase === "night") {
-    drawMoon();
+        drawMoon();
 
-    for (let star of stars) {
-     drawStar(star);
-     }
+        for (let star of stars) {
+            drawStar(star);
+        }
+    }
+    else if (phase === "dawn") {
+        drawMoon();
+        drawSun();
     }
     else {
-    drawSun();
-}
+        drawSun();
+    }
+    
 drawGround(phase);
 
 
@@ -112,7 +119,7 @@ moveMoon(phase);
 
 drawInstructions();
 
-if (timer >= dawn) {
+if (timer >= "dawn") {
 gameWon = true;
 }
 
@@ -125,6 +132,9 @@ drawWin();
 noLoop();
 }
 
+ if (timer >= winTime) {
+        gameWon = true;
+    }
 }
 
 function drawGround(phase) {
@@ -145,14 +155,18 @@ pop();
 function drawSun() {
     push();
     noStroke();
-    fill("#f3d080");
+    fill("#ffb300");
     ellipse(sun.x, sun.y, sun.size);
     pop();
 }
 
 function moveSun(phase) {
-    if (phase === "sunset") {
+   if (phase === "sunset") {
         sun.y = sun.y + 0.8;
+    }
+
+    if (phase === "dawn" && sun.y > 100) {
+        sun.y = sun.y - 0.8;
     }
 }
 
@@ -167,8 +181,12 @@ function drawMoon() {
 
 // This makes the moon rises during the night and stops at the top
 function moveMoon(phase) {
-    if (phase === "night" && moon.y > 100) {
+ if (phase === "night" && moon.y > 100) {
         moon.y = moon.y - 0.8;
+    }
+
+    if (phase === "dawn" && moon.y < 600) {
+        moon.y = moon.y + 0.8;
     }
 }
 //this draws my stars
@@ -181,27 +199,33 @@ function drawStar(star) {
 }
 //This is going to phase the day into "day", "sunset", and "night" 
 function getPhase() {
-    if (timer < sunsetStart) {
-        return "day";
-    }
-    else if (timer < nightStart) {
-        return "sunset";
-    }
-    else {
-        return "night";
-    }
+  if (timer < sunsetStart) {
+  return "day";
+ }
+  else if (timer < nightStart) {
+  return "sunset";
+}
+  else if (timer < dawnStart) {
+  return "night";
+}
+ else {
+  return "dawn";
+}
 }
 
 //this change the color of the sky on the phases
 function drawSky(phase) {
-    if (phase === "day") {
+ if (phase === "day") {
         background("#8ecae6");
     }
     else if (phase === "sunset") {
         background("#f4a261");
     }
-    else {
+    else if (phase === "night") {
         background("#0b1d3a");
+    }
+    else {
+        background("#FAE1AA");
     }
 }
 
@@ -269,7 +293,7 @@ let flowerHeadY = sunflower.y - sunflower.stemHeight;
 
     // Petals (4 straight and 4 diagonal)
     noStroke();
-    fill("#ffc300");
+    fill("#ffd23d");
     ellipse(sunflower.x - sunflower.size / 2, flowerHeadY, sunflower.size / 2);
     ellipse(sunflower.x + sunflower.size / 2, flowerHeadY, sunflower.size / 2);
     ellipse(sunflower.x, flowerHeadY - sunflower.size / 2, sunflower.size / 2);
@@ -310,21 +334,24 @@ function coverSunflower(sunflower, farmer) {
 }
 
 function updateSunflower(sunflower, phase) {
-    if (sunflower.coverTimer > 0) {
-        // the cover wears out and the frost goes down
-        sunflower.coverTimer = sunflower.coverTimer - 1;
+if (sunflower.coverTimer > 0) {
+// the cover wears out and the frost goes down
+sunflower.coverTimer = sunflower.coverTimer - 1;
 
-        if (sunflower.frost > 0) {
-            sunflower.frost = sunflower.frost - 0.5;
+if (sunflower.frost > 0) {
+    sunflower.frost = sunflower.frost - 0.5;
         }
     }
-    else if (phase === "night") {
-        // the frost goes up
-        sunflower.frost = sunflower.frost + sunflower.frostRate;
+else if (phase === "night") {
+ // the frost goes up
+sunflower.frost = sunflower.frost + sunflower.frostRate;
 
-        if (sunflower.frost >= 100) {
-            gameOver = true;
+if (sunflower.frost >= 100) {
+    gameOver = true;
         }
+    }
+else if (phase === "dawn" && sunflower.frost > 0) {
+        sunflower.frost = sunflower.frost - 0.5;
     }
 }
 

@@ -18,6 +18,12 @@ const nightStart = 1200;
 // True when a sunflower freezes
 let gameOver = false;
 
+// True when the player survives the night
+let gameWon = false;
+
+// When the night ends and the sun comes back
+const dawn = 2400;
+
 // How long a cover lasts on the flowers
 const coverDuration = 420;
 
@@ -104,10 +110,20 @@ moveFarmer(farmer);
 moveSun(phase);
 moveMoon(phase);
 
+drawInstructions();
+
+if (timer >= dawn) {
+gameWon = true;
+}
+
 if (gameOver) {
 drawGameOver();
 noLoop();
     }
+else if (gameWon) {
+drawWin();
+noLoop();
+}
 
 }
 
@@ -315,18 +331,66 @@ function updateSunflower(sunflower, phase) {
 //this is a game over if a sunflower freezes
 function drawGameOver() {
     push();
-    fill("#ffffff");
+    fill("#ff0000");
     textSize(48);
     textAlign(CENTER, CENTER);
-    text("A sunflower froze!", 450, 250);
+    text("A sunflower froze!", 450, 215);
+    textSize(24);
+    text("Press r to play again", 450, 290);
     pop();
 }
 
-// This runs once every time the key "c" is pressed
+// this is when you win the game and your sunflower didnt froze
+function drawWin() {
+    push();
+    fill("#ffffff");
+    textFont("Olympia");
+    textSize(48);
+    textAlign(CENTER, CENTER);
+    text("You saved the sunflowers!", 450, 215);
+    textFont("Olympia");
+    textSize(24);
+    text("Press r to play again", 450, 290);
+    pop();
+}
+
+// This shows the controls at the top left on how to play
+function drawInstructions() {
+    push();
+    fill("#ffffff");
+    textSize(18);
+    textFont("Olympia");
+    textAlign(LEFT, CENTER);
+    text("Arrow keys: move    C: cover a sunflower", 20, 30);
+    pop();
+}
+
+// This runs once every time the key "c" is pressed and the key "r"
 function keyPressed() {
     if (key === "c") {
         for (let sunflower of sunflowers) {
             coverSunflower(sunflower, farmer);
         }
     }
+
+    if (key === "r" && (gameOver || gameWon)) {
+        restartGame();
+    }
+}
+
+// Everything starts all over again
+function restartGame() {
+    timer = 0;
+    gameOver = false;
+    gameWon = false;
+    farmer.x = 450;
+    sun.y = 100;
+    moon.y = 600;
+
+    for (let sunflower of sunflowers) {
+        sunflower.coverTimer = 0;
+        sunflower.frost = 0;
+    }
+
+    loop();
 }

@@ -25,8 +25,8 @@ const sun = {
 // The moon
 const moon = {
     x: 780,
-    y: 100,
-    size: 80
+    y: 600,
+    size: 110
 };
 
 //the farmer 
@@ -47,6 +47,19 @@ let sunflowers = [
     { x: 770, y: 500, stemHeight: 135, size: 65 }
 ];
 
+// The array of stars
+let stars = [
+    { x: 80, y: 60, size: 6 },
+    { x: 200, y: 130, size: 4 },
+    { x: 310, y: 50, size: 5 },
+    { x: 420, y: 150, size: 4 },
+    { x: 520, y: 70, size: 6 },
+    { x: 640, y: 180, size: 4 },
+    { x: 730, y: 60, size: 5 },
+    { x: 150, y: 220, size: 4 },
+    { x: 560, y: 240, size: 5 },
+    { x: 850, y: 140, size: 4 }
+];
 
 function setup() {
 createCanvas(900, 600);
@@ -57,33 +70,48 @@ createCanvas(900, 600);
 function draw() {
 background("#8ecae6");
 timer = timer + 1;
-  let phase = getPhase();
-  
-  drawGround(phase);
+let phase = getPhase();
+
+drawSky(phase);
+
 
 if (phase === "night") {
     drawMoon();
+
+    for (let star of stars) {
+     drawStar(star);
+     }
+    }
+    else {
+    drawSun();
 }
+drawGround(phase);
 
-drawSun();
-drawSky(phase);
-
-  drawFarmer(farmer);
-  moveFarmer(farmer);
 
   for (let sunflower of sunflowers) {
         drawSunflower(sunflower);
     }
 
+drawFarmer(farmer);
+moveFarmer(farmer);
+moveSun(phase);
+moveMoon(phase);
 
 }
 
-function drawGround() {
-    push();
-    noStroke();
-    fill("#6b8f3a");
-    rect(0, 480, 900, 120);
-    pop();
+function drawGround(phase) {
+push();
+noStroke();
+
+    if (phase === "night") {
+        fill("#2f4a2a");
+    }
+    else {
+        fill("#6b8f3a");
+    }
+
+rect(0, 490, 950, 140);
+pop();
 }
 //this draws the sun 
 function drawSun() {
@@ -96,7 +124,7 @@ function drawSun() {
 
 function moveSun(phase) {
     if (phase === "sunset") {
-        sun.y = sun.y + 0.6;
+        sun.y = sun.y + 0.8;
     }
 }
 
@@ -107,6 +135,33 @@ function drawMoon() {
     fill("#f1f1e6");
     ellipse(moon.x, moon.y, moon.size);
     pop();
+}
+
+// This makes the moon rises during the night and stops at the top
+function moveMoon(phase) {
+    if (phase === "night" && moon.y > 100) {
+        moon.y = moon.y - 0.8;
+    }
+}
+//this draws my stars
+function drawStar(star) {
+    push();
+    noStroke();
+    fill("#ffffff");
+    ellipse(star.x, star.y, star.size);
+    pop();
+}
+//This is going to phase the day into "day", "sunset", and "night" 
+function getPhase() {
+    if (timer < sunsetStart) {
+        return "day";
+    }
+    else if (timer < nightStart) {
+        return "sunset";
+    }
+    else {
+        return "night";
+    }
 }
 
 //this change the color of the sky on the phases
@@ -201,17 +256,4 @@ let flowerHeadY = sunflower.y - sunflower.stemHeight;
     ellipse(sunflower.x, flowerHeadY, sunflower.size * 0.6);
 
     pop();
-}
-
-//This is going to phase the day into "day", "sunset", and "night" 
-function getPhase() {
-    if (timer < sunsetStart) {
-        return "day";
-    }
-    else if (timer < nightStart) {
-        return "sunset";
-    }
-    else {
-        return "night";
-    }
 }

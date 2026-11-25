@@ -40,11 +40,11 @@ const farmer = {
 
 //this is my sunflowers array
 let sunflowers = [
-    { x: 130, y: 500, stemHeight: 130, size: 65 },
-    { x: 290, y: 500, stemHeight: 150, size: 70 },
-    { x: 450, y: 500, stemHeight: 120, size: 65 },
-    { x: 610, y: 500, stemHeight: 145, size: 70 },
-    { x: 770, y: 500, stemHeight: 135, size: 65 }
+     { x: 130, y: 500, stemHeight: 130, size: 65, isCovered: false },
+    { x: 290, y: 500, stemHeight: 150, size: 70, isCovered: false },
+    { x: 450, y: 500, stemHeight: 120, size: 65, isCovered: false },
+    { x: 610, y: 500, stemHeight: 145, size: 70, isCovered: false },
+    { x: 770, y: 500, stemHeight: 135, size: 65, isCovered: false }
 ];
 
 // The array of stars
@@ -256,4 +256,31 @@ let flowerHeadY = sunflower.y - sunflower.stemHeight;
     ellipse(sunflower.x, flowerHeadY, sunflower.size * 0.6);
 
     pop();
+
+    // Cover the sunflower
+    if (sunflower.isCovered) {
+        noStroke();
+        fill("#dfe6f2");
+        ellipse(sunflower.x, flowerHeadY, sunflower.size * 1.7, sunflower.size * 1.5);
+        fill("#b8c4de");
+        ellipse(sunflower.x, flowerHeadY + sunflower.size * 0.6, sunflower.size * 0.5, sunflower.size * 0.3);
+    }    
+}
+
+// Covers the sunflower if the farmer is close enough to it
+function coverSunflower(sunflower, farmer) {
+    let distance = dist(farmer.x, farmer.y, sunflower.x, sunflower.y);
+
+    if (distance < 100) {
+        sunflower.isCovered = true;
+    }
+}
+
+// This runs once every time a key the "c" is pressed
+function keyPressed() {
+    if (key === "c") {
+        for (let sunflower of sunflowers) {
+            coverSunflower(sunflower, farmer);
+        }
+    }
 }

@@ -16,6 +16,16 @@ const farmer = {
     speed: 5
 };
 
+//this is my sunflowers array
+
+let sunflowers = [
+    { x: 130, y: 500, stemHeight: 130, size: 65 },
+    { x: 290, y: 500, stemHeight: 150, size: 70 },
+    { x: 450, y: 500, stemHeight: 120, size: 65 },
+    { x: 610, y: 500, stemHeight: 145, size: 70 },
+    { x: 770, y: 500, stemHeight: 135, size: 65 }
+];
+
 
 function setup() {
 createCanvas(900, 600);
@@ -32,6 +42,10 @@ background("#8ecae6");
   drawFarmer(farmer);
   moveFarmer(farmer);
 
+  for (let sunflower of sunflowers) {
+        drawSunflower(sunflower);
+    }
+
 }
 
 function drawGround() {
@@ -45,11 +59,12 @@ function drawGround() {
 function drawSun() {
     push();
     noStroke();
-    fill("#ffd166");
+    fill("#f3d080");
     ellipse(780, 100, 110, 110);
     pop();
 }
 
+// this is the farmer
 function drawFarmer(farmer) {
     push();
     noStroke();
@@ -75,7 +90,7 @@ function drawFarmer(farmer) {
 }
 
 
- // Moves the farmer left or right while an arrow key is held down.
+ // Moves the farmer left or right while an arrow key is held down. 
  // He cannot leave the canvas.
  
 function moveFarmer(farmer) {
@@ -96,4 +111,36 @@ function moveFarmer(farmer) {
     if (farmer.x > 875) {
         farmer.x = 875;
     }
+}
+
+//I draw the sunflowers here
+
+function drawSunflower(sunflower) {
+
+let flowerHeadY = sunflower.y - sunflower.stemHeight;
+
+    push();
+
+    // Stem
+    stroke("#3f7d3a");
+    strokeWeight(7);
+    line(sunflower.x, sunflower.y, sunflower.x, flowerHeadY);
+
+    // Petals (4 straight and 4 diagonal)
+    noStroke();
+    fill("#ffc300");
+    ellipse(sunflower.x - sunflower.size / 2, flowerHeadY, sunflower.size / 2);
+    ellipse(sunflower.x + sunflower.size / 2, flowerHeadY, sunflower.size / 2);
+    ellipse(sunflower.x, flowerHeadY - sunflower.size / 2, sunflower.size / 2);
+    ellipse(sunflower.x, flowerHeadY + sunflower.size / 2, sunflower.size / 2);
+    ellipse(sunflower.x - sunflower.size / 3, flowerHeadY - sunflower.size / 3, sunflower.size / 2);
+    ellipse(sunflower.x + sunflower.size / 3, flowerHeadY - sunflower.size / 3, sunflower.size / 2);
+    ellipse(sunflower.x - sunflower.size / 3, flowerHeadY + sunflower.size / 3, sunflower.size / 2);
+    ellipse(sunflower.x + sunflower.size / 3, flowerHeadY + sunflower.size / 3, sunflower.size / 2);
+
+    // Center
+    fill("#3b260e");
+    ellipse(sunflower.x, flowerHeadY, sunflower.size * 0.6);
+
+    pop();
 }
